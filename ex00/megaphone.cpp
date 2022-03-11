@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 		for (int j = 0; argv[i][j]; j++)
 		{
 			char	c;
-			if (ft_is_small(argv[i][j]))
+			if (ft_is_small(argv[i][j])) // toupper
 			{
 				c = argv[i][j] - 32;
 				std::cout << c;

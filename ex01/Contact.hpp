@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClassAddress.hpp                                   :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:05:46 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/09 16:11:36 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/11 14:21:25 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASSADDRESS_HPP
-# define CLASSADDRESS_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 // class ClassAddress;
 
-class ClassAddress
+class Contact
 {
+	private :
+	
 	int			idx;
 	std::string	first_name;
 	std::string	last_name;
@@ -26,18 +28,21 @@ class ClassAddress
 	std::string	darkest_secret;
 
 	public :
-	ClassAddress( void );
+	
+	Contact( void );
+	Contact(std::string _first_name, std::string _last_name, \
+		std::string _nickname, std::string _phone_number, std::string _darkest_secret);
 
-	void	add_Q_data(int i);
-
-	int		re_idx(void);
-
+	int		get_idx(void) const;
+	
 	void	set_idx(int i);
-	void	set_first_name(std::string cmd);
-	void	set_last_name(std::string cmd);
-	void	set_nickname(std::string cmd);
-	void	set_phone_number(std::string cmd);
-	void	set_darkest_secret(std::string cmd);
+	void	set_contact(std::string _first_name, std::string _last_name, \
+		std::string _nickname, std::string _phone_number, std::string _darkest_secret);
+	// void	set_first_name(std::string cmd);
+	// void	set_last_name(std::string cmd);
+	// void	set_nickname(std::string cmd);
+	// void	set_phone_number(std::string cmd);
+	// void	set_darkest_secret(std::string cmd);
 
 	void	print_idx(void);
 	void	print_F(void);

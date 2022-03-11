@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClassData.hpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:11:04 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/09 16:28:06 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/11 14:47:54 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASSDATA_HPP
-# define CLASSDATA_HPP
-# define MAX 5
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# define MAX 8
 # include <iostream>
-# include <string>
-# include <iomanip>
 
-class ClassData;
+class Phonebook;
 
-# include "ClassAddress.hpp"
+# include "Contact.hpp"
 
-class ClassData
+class Phonebook
 {
 	int				idx;
-	ClassAddress	address[MAX];
+	Contact	Contact[MAX];
 
 public:
-	ClassData();
-	~ClassData();
+	Phonebook();
+	~Phonebook();
+	int	add_Q_data(int idx);
+	int	check_number(std::string pn);
 	void	set_index(int i);
 	void	set_down_index(void);
-	void	set_address(int idx);
-	void	print_address(void);
+	void	print_Contact(void);
 };
 
 #endif

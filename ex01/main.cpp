@@ -1,13 +1,13 @@
-#include "ClassData.hpp"
-#include "ClassAddress.hpp"
+#include "Phonebook.hpp"
+#include "Contact.hpp"
 
 int	what_is_cmd(std::string cmd)
 {
-	int		i;
-	int		no;
-	char	exit[5] = "EXIT";
-	char	add[4] = "ADD";
-	char	search[7] = "SEARCH";
+	int			i;
+	int			no;
+	std::string	exit = "EXIT";
+	std::string	add = "ADD";
+	std::string	search = "SEARCH";
 
 	no = 0;
 	for (i = 0; cmd[i]; i++)
@@ -40,14 +40,16 @@ int	main()
 {
 	std::string		cmd;
 	int	idx = -1;
-	ClassData		data;
+	Phonebook		Phonebook;
 	
 	while (1)
 	{
 		std::wcout << "Enter a command (ADD or SEARCH or EXIT): ";
 		std::getline(std::cin, cmd);
+		if (cmd == "\0")
+			break ;
 		
-		switch (what_is_cmd(cmd))
+		switch (what_is_cmd(cmd)) // cmd == "EXIT" or (int)cmd.compare("EXIT")
 		{
 			case (1): // EXIT
 			{
@@ -56,16 +58,16 @@ int	main()
 			case (2): // ADD
 			{
 				if (idx >= MAX - 1)
-					data.set_down_index();
+					Phonebook.set_down_index();
 				else
 					++idx;
-				std::cout << idx << std::endl;
-				data.set_address(idx);
+				if (Phonebook.add_Q_data(idx) < 0)
+					std::cout << "INVALID ERROR\n";
 				break ;
 			}
 			case (3): // SEARCH
 			{
-				data.print_address();
+				Phonebook.print_Contact();
 				break ;
 			}
 			default :
