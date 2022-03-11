@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 22:11:04 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 21:06:58 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/11 16:48:47 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/11 17:11:17 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define MAX 8
-# include <iostream>
+#include "Zombie.hpp"
 
-class Phonebook;
-
-# include "Contact.hpp"
-
-class Phonebook
+int	main()
 {
-	int				idx;
-	Contact	Contact[MAX];
+	Zombie	*zom;
+	std::string	name;
 
-public:
-	Phonebook();
-	~Phonebook();
-	int	add_Q_data(int idx);
-	int	check_number(std::string pn);
-	void	set_index(int i);
-	void	set_down_index(void);
-	void	print_Contact(void);
-};
-
-#endif
+	std::cout << "Naming Zombie : ";
+	if (std::getline(std::cin, name) == NULL)
+		return (-1);
+	std::cout << "newZombie announce:\n";
+	zom = newZombie(name);
+	zom->announce();
+	delete zom;
+	std::cout << "randomChump(name):\n";
+	randomChump(name);
+	// system("leaks Zombie");
+	return (0);
+}

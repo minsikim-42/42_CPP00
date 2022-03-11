@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 22:11:04 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 21:06:58 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/11 17:28:04 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/11 18:26:17 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define MAX 8
-# include <iostream>
+#include "Zombie.hpp"
 
-class Phonebook;
-
-# include "Contact.hpp"
-
-class Phonebook
+Zombie::Zombie()
 {
-	int				idx;
-	Contact	Contact[MAX];
 
-public:
-	Phonebook();
-	~Phonebook();
-	int	add_Q_data(int idx);
-	int	check_number(std::string pn);
-	void	set_index(int i);
-	void	set_down_index(void);
-	void	print_Contact(void);
-};
+}
 
-#endif
+Zombie::Zombie(std::string _name)
+{
+	this->name = _name;
+}
+
+void	Zombie::set_name(std::string _name)
+{
+	this->name = _name;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << this->name << std::endl;
+}
+
+Zombie*	Zombie::newZombie(std::string _name)
+{
+	Zombie*	zom;
+
+	zom = new Zombie(_name);
+	return (zom);
+}

@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 22:11:04 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 21:06:58 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/11 17:22:01 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/11 18:25:35 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define MAX 8
-# include <iostream>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include "iostream"
 
-class Phonebook;
-
-# include "Contact.hpp"
-
-class Phonebook
+class	Zombie
 {
-	int				idx;
-	Contact	Contact[MAX];
-
-public:
-	Phonebook();
-	~Phonebook();
-	int	add_Q_data(int idx);
-	int	check_number(std::string pn);
-	void	set_index(int i);
-	void	set_down_index(void);
-	void	print_Contact(void);
+private :
+	std::string	name;
+public :
+	Zombie();
+	Zombie(std::string _name);
+	void	set_name(std::string _name);
+	void	announce(void);
+	Zombie* newZombie(std::string _name);
 };
+
+Zombie* zombieHorde(int N, std::string _name);
 
 #endif

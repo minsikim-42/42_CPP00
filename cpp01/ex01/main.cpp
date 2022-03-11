@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:23:48 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 21:07:22 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/11 17:36:45 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/11 18:28:05 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-int	main(int argc, char *argv[])
+int	main()
 {
-	std::string	cmd = "";
+	std::string	input;
+	int			i;
+	Zombie*		zoms;
 
-	if (argc == 1)
+	
+	std::cout << "N : ";
+	std::getline(std::cin, input);
+	i = std::atoi(input.c_str());
+	std::cout << "name : ";
+	std::getline(std::cin, input); 
+	zoms = zombieHorde(i, input);
+	for (int j = 0; j < i; j++)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
+		std::cout << "j:" << j << ", name:";
+		zoms[j].announce();
+		std::cout << std::endl;
 	}
-	for (int i = 1; i < argc; i++)
-	{
-		for (int j = 0; argv[i][j]; j++)
-		{
-			char	c = argv[i][j];
-			if (isalpha(argv[i][j]))
-				c = std::toupper(argv[i][j]);
-			cmd += c;
-		}
-	}
-	std::cout << cmd;
-	std::cout << std::endl;
+	delete[] zoms;
+	// system("leaks Zombie");
 	return (0);
 }

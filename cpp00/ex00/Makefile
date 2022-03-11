@@ -1,5 +1,5 @@
 NAME = Megaphone
-CPPCC = c++
+CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
 CPP = megaphone.cpp
 OBJECT = $(CPP:.cpp=.o)

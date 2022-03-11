@@ -3,8 +3,9 @@ CPPCC = c++
 FLAGS = -Wall -Wextra -Werror
 MAIN = main.cpp
 CPP = Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
+		ZombieHorde.cpp \
+		# newZombie.cpp \
+		# randomChump.cpp
 OBJECT = $(CPP:.cpp=.o)
 
 all : $(NAME)

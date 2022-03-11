@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 22:11:04 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 21:06:58 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/11 16:44:34 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/11 16:46:54 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define MAX 8
-# include <iostream>
+#include "Zombie.hpp"
 
-class Phonebook;
-
-# include "Contact.hpp"
-
-class Phonebook
+void	randomChump(std::string name)
 {
-	int				idx;
-	Contact	Contact[MAX];
+	Zombie*	zom;
 
-public:
-	Phonebook();
-	~Phonebook();
-	int	add_Q_data(int idx);
-	int	check_number(std::string pn);
-	void	set_index(int i);
-	void	set_down_index(void);
-	void	print_Contact(void);
-};
-
-#endif
+	zom = new Zombie(name);
+	zom->announce();
+	delete zom;
+}

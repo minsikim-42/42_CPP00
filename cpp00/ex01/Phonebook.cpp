@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:13 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 14:54:13 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:06:55 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Phonebook::~Phonebook(void)
 	
 }
 
-int	Phonebook::add_Q_data(int idx) /////////////////////
+int	Phonebook::add_Q_data(int idx)
 {
 	std::string	fn;
 	std::string	ln;
@@ -82,6 +82,7 @@ void	Phonebook::set_down_index(void)
 	while (this->Contact[i].get_idx() >= 0 && i < MAX - 1)
 	{
 		this->Contact[i] = this->Contact[i + 1];
+		this->Contact[i].set_idx(i);
 		i++;
 	}
 }

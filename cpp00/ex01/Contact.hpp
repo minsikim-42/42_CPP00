@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:05:46 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 14:21:25 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/11 21:11:33 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,6 @@ class Contact
 	void	set_idx(int i);
 	void	set_contact(std::string _first_name, std::string _last_name, \
 		std::string _nickname, std::string _phone_number, std::string _darkest_secret);
-	// void	set_first_name(std::string cmd);
-	// void	set_last_name(std::string cmd);
-	// void	set_nickname(std::string cmd);
-	// void	set_phone_number(std::string cmd);
-	// void	set_darkest_secret(std::string cmd);
 
 	void	print_idx(void);
 	void	print_F(void);

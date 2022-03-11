@@ -1,5 +1,5 @@
 NAME = PhoneBook
-CPPCC = c++
+CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
 MAIN = main.cpp
 CPP = Phonebook.cpp \

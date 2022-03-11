@@ -49,7 +49,7 @@ int	main()
 		if (cmd == "\0")
 			break ;
 		
-		switch (what_is_cmd(cmd)) // cmd == "EXIT" or (int)cmd.compare("EXIT")
+		switch (what_is_cmd(cmd)) // cmd == "EXIT" or cmd.compare("EXIT") == 0
 		{
 			case (1): // EXIT
 			{
@@ -70,7 +70,7 @@ int	main()
 				Phonebook.print_Contact();
 				break ;
 			}
-			default :
+			default : // else
 			{
 				std::cout << "wrong cmd\n";
 			}
