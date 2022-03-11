@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:05:12 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 14:54:09 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/11 15:08:55 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,31 +51,6 @@ void	Contact::set_idx(int i)
 {
 	this->idx = i;
 }
-
-// void	Contact::set_first_name(std::string cmd)
-// {
-// 	this->first_name = cmd;
-// }
-
-// void	Contact::set_last_name(std::string cmd)
-// {
-// 	this->last_name = cmd;
-// }
-
-// void	Contact::set_nickname(std::string cmd)
-// {
-// 	this->nickname = cmd;
-// }
-
-// void	Contact::set_phone_number(std::string cmd)
-// {
-// 	this->phone_number = cmd;
-// }
-
-// void	Contact::set_darkest_secret(std::string cmd)
-// {
-// 	this->darkest_secret = cmd;
-// }
 
 void	Contact::print_idx(void)
 {
