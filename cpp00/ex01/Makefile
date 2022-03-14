@@ -1,15 +1,15 @@
 NAME = PhoneBook
 CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
-MAIN = main.cpp
 CPP = Phonebook.cpp \
-		Contact.cpp
+		Contact.cpp \
+		main.cpp
 OBJECT = $(CPP:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJECT)
-	$(CPPCC) $(FLAGS) -o $(NAME) $(MAIN) $(OBJECT)
+	$(CPPCC) $(FLAGS) -o $(NAME) $(OBJECT)
 
 $(OBJECT) : $(CPP)
 	$(CPPCC) $(FLAGS) -c $(CPP)

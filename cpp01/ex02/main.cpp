@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 16:13:42 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/14 13:40:57 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/12 15:29:26 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/12 15:40:17 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include <iostream>
 
-# include <iostream>
-
-class Zombie
+int	main()
 {
-private :
-	std::string	name;
-public :
-	Zombie();
-	~Zombie();
-	Zombie(std::string name);
-	void		announce(void);
-};
+	std::string		string = "HI THIS IS BRAIN"; //?
+	std::string*	stringPTR = &string;
+	std::string&	stringREF = string;
 
-Zombie*		newZombie(std::string name);
-void		randomChump(std::string name);
-
-#endif
+	std::cout << "stringPTR : " << *stringPTR << std::endl;
+	std::cout << "stringREF : " << stringREF << std::endl;
+	return (0);
+}

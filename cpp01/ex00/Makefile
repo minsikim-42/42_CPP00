@@ -1,16 +1,16 @@
 NAME = Zombie
-CPPCC = c++
+CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
-MAIN = main.cpp
 CPP = Zombie.cpp \
 		newZombie.cpp \
-		randomChump.cpp
+		randomChump.cpp \
+		main.cpp
 OBJECT = $(CPP:.cpp=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJECT) $(MAIN)
-	$(CPPCC) $(FLAGS) -o $(NAME) $(MAIN) $(OBJECT)
+$(NAME) : $(OBJECT)
+	$(CPPCC) $(FLAGS) -o $(NAME) $(OBJECT)
 
 $(OBJECT) : $(CPP)
 	$(CPPCC) $(FLAGS) -c $(CPP)

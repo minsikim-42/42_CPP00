@@ -5,35 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 17:36:45 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/12 22:17:16 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/12 19:04:03 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/12 21:57:36 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <fstream>
 
-int	main()
+int	main(int argc, char *argv[])
 {
-	std::string	input;
-	int			i;
-	Zombie*		zoms;
+	std::ofstream	fout;
+	// std::ifstream	fin;
+	std::string		str = "";
 
-	
-	std::cout << "N : "; ///////////
-	std::getline(std::cin, input);
-	i = std::atoi(input.c_str());
-	if (i == 0)
-		std::cout << "error";
-	std::cout << "name : ";
-	std::getline(std::cin, input); 
-	zoms = zombieHorde(i, input);
-	for (int j = 0; j < i; j++)
+	if (argc != 4)
 	{
-		std::cout << "j:" << j << ", name:";
-		zoms[j].announce();
-		std::cout << std::endl;
+		std::cout << "Error\n";
+		return (-1);
 	}
-	delete[] zoms;
-	// system("leaks Zombie");
+	str.c_str();
+	std::ifstream fin(argv[1]);
+	char	c;
+	while (fin.get(c))
+	{
+		str += c;
+	}
+	if (c == argv[2][0])
+			{
+				fin.get(c);
+				int	i = 1;
+				while(c == argv[i])
+				{
+					fin.get(c);
+				}
+			}
+	// fin.open(argv[1]);
+	// while ((fin >> str) != NULL)
+	// {
+		std::cout << str << std::endl;
+	// }
 	return (0);
 }

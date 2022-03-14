@@ -1,12 +1,10 @@
 NAME = Zombie
 CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
-# MAIN = main.cpp
-CPP = Zombie.cpp \
-		ZombieHorde.cpp \
-		main.cpp \
-		# newZombie.cpp \
-		# randomChump.cpp
+CPP = main.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
+		Weapon.cpp
 OBJECT = $(CPP:.cpp=.o)
 
 all : $(NAME)

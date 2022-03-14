@@ -5,35 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 17:36:45 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/12 22:17:16 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/12 17:06:47 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/12 18:59:53 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-int	main()
+int main()
 {
-	std::string	input;
-	int			i;
-	Zombie*		zoms;
-
-	
-	std::cout << "N : "; ///////////
-	std::getline(std::cin, input);
-	i = std::atoi(input.c_str());
-	if (i == 0)
-		std::cout << "error";
-	std::cout << "name : ";
-	std::getline(std::cin, input); 
-	zoms = zombieHorde(i, input);
-	for (int j = 0; j < i; j++)
-	{
-		std::cout << "j:" << j << ", name:";
-		zoms[j].announce();
-		std::cout << std::endl;
-	}
-	delete[] zoms;
-	// system("leaks Zombie");
-	return (0);
+  {
+    Weapon club = Weapon("crude spiked club");
+    HumanA bob("Bob", club);
+    bob.attack();
+    club.setType("some other type of club");
+    bob.attack();
+  }
+  {
+    Weapon club = Weapon("crude spiked club");
+    HumanB jim("Jim");
+    jim.setWeapon(club);
+    jim.attack();
+    club.setType("some other type of club");
+    jim.attack();
+  }
 }

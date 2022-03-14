@@ -26,13 +26,15 @@ int	what_is_cmd(std::string cmd)
 	if (no == 0 && i == 3)
 		return (2);
 	no = 0;
-	for (i = 0; cmd[i]; i++)
-	{
-		if (cmd[i] != search[i])
-			no = -1;
-	}
-	if (no == 0 && i == 6)
+	if (cmd == "SEARCH")
 		return (3);
+	// for (i = 0; cmd[i]; i++)
+	// {
+	// 	if (cmd[i] != search[i])
+	// 		no = -1;
+	// }
+	// if (no == 0 && i == 6)
+	// 	return (3);
 	return (no);
 }
 
