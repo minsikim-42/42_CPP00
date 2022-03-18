@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:07:37 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/16 20:46:24 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/18 20:35:46 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	Karen::complain(std::string level)
 {
 	void	(Karen::*fn_list[4])(void) = {(&Karen::debug), (&Karen::info), \
 			(&Karen::warning), (&Karen::error)};
+	// void	(Karen::*fn)(void) = &Karen::debug;
 	std::string	arr[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	
 	for (int i = 0; i < 4; i++)
