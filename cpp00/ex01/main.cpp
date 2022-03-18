@@ -41,7 +41,7 @@ int	main()
 				else
 					++idx;
 				if (Phonebook.add_Q_data(idx) < 0)
-					std::cout << "INVALID ERROR\n";
+					std::cout << "! INVALID ERROR !\n";
 				break ;
 			}
 			case (3): // SEARCH
@@ -51,7 +51,7 @@ int	main()
 			}
 			default : // else
 			{
-				std::cout << "wrong cmd\n";
+				std::cout << "! wrong cmd !\n";
 			}
 		}
 	}

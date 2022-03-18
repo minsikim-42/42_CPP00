@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:13 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/16 16:29:31 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:02:45 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,36 @@ int	Phonebook::add_Q_data(int idx)
 	std::string	pn;
 	std::string	ds;
 
-	std::cout << "firsh name : ";
-	if (std::getline(std::cin, fn) == NULL)
-		exit(-1);
-	std::cout << "last name : ";
-	if (std::getline(std::cin, ln) == NULL)
-		exit(-1);
-	std::cout << "nickname : ";
-	if (std::getline(std::cin, nn) == NULL)
-		exit(-1);
+	do
+	{
+		std::cout << "firsh name : ";
+		if (std::getline(std::cin, fn) == NULL)
+			exit(-1);
+	} while (fn.length() == 0);
+	do
+	{
+		std::cout << "last name : ";
+		if (std::getline(std::cin, ln) == NULL)
+			exit(-1);
+	} while (ln.length() == 0);
+	do
+	{
+		std::cout << "nickname : ";
+		if (std::getline(std::cin, nn) == NULL)
+			exit(-1);
+	} while (nn.length() == 0);
 	do
 	{
 		std::cout << "phone number : ";
 		if (std::getline(std::cin, pn) == NULL)
 			exit(-1);
-	}
-	while (this->check_number(pn) < 0);
-	std::cout << "darkest secret : ";
-	if (std::getline(std::cin, ds) == NULL)
-		exit(-1);
+	} while (this->check_number(pn) < 0 || pn.length() == 0);
+	do
+	{
+		std::cout << "darkest secret : ";
+		if (std::getline(std::cin, ds) == NULL)
+			exit(-1);
+	} while (ds.length() == 0);
 	std::cout << "\n";
 	this->Contact[idx].set_idx(idx);
 	this->Contact[idx].set_contact(fn, ln, nn, pn, ds);
@@ -91,7 +102,7 @@ void	Phonebook::print_Contact(void)
 {
 	if (this->Contact->get_idx() < 0)
 	{
-		std::cout << "NO Contact\n";
+		std::cout << "! NO Contact !\n";
 		return ;
 	}
 	std::cout << "=============================================\n";
@@ -123,7 +134,7 @@ void	Phonebook::print_Contact(void)
 			j++;
 		if (j != 1)
 		{
-			std::cout << "wrong index\n";
+			std::cout << "! wrong index !\n";
 			continue ;
 		}
 		j = cmd[0] - 48;
@@ -131,7 +142,7 @@ void	Phonebook::print_Contact(void)
 			this->Contact[j].print_all();
 		else
 		{
-			std::cout << "wrong index\n";
+			std::cout << "! wrong index !\n";
 			continue ;
 		}
 		std::cout << "\n";
