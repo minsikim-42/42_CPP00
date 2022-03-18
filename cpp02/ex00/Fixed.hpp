@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 16:26:40 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/16 16:32:51 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/17 14:28:53 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/17 21:02:28 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
+# include <iostream>
 
-Weapon::Weapon(void)
+class Fixed
 {
+private :
+	int	fixedPoint; // 고정소수점
+	static const int	fixedPoint2; // 분수부분 비트
+public :
+	Fixed();
+	Fixed(const Fixed &a);
+	~Fixed();
+	Fixed	&operator=(const Fixed &origin); // 대입 연산자 오버로드
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+};
 
-}
-
-Weapon::Weapon(std::string Type)
-{
-	this->Type_ = Type;
-}
-
-std::string	Weapon::getType(void)
-{
-	return (Type_);
-}
-
-void	Weapon::setType(std::string Type)
-{
-	Type_ = Type;
-}
+#endif

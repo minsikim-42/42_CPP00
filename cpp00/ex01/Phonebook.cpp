@@ -6,13 +6,13 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:37:13 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 21:06:55 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:29:31 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook(void) : idx(-1)
+Phonebook::Phonebook(void) : idx_(-1)
 {
 	
 }
@@ -72,7 +72,7 @@ int		Phonebook::check_number(std::string pn)
 
 void	Phonebook::set_index(int idx)
 {
-	this->idx = idx;
+	this->idx_ = idx;
 }
 
 void	Phonebook::set_down_index(void)

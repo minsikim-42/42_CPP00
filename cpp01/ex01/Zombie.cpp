@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:28:04 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/14 13:41:49 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:30:58 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,25 @@ Zombie::~Zombie()
 	std::cout << "Zombie is dead\n";
 }
 
-Zombie::Zombie(std::string _name)
+Zombie::Zombie(std::string name)
 {
-	this->name = _name;
+	this->name_ = name;
 }
 
-void	Zombie::set_name(std::string _name)
+void	Zombie::set_name(std::string name)
 {
-	this->name = _name;
+	this->name_ = name;
 }
 
 void	Zombie::announce(void)
 {
-	std::cout << this->name << std::endl;
+	std::cout << this->name_ << std::endl;
 }
 
-Zombie*	Zombie::newZombie(std::string _name)
+Zombie*	Zombie::newZombie(std::string name)
 {
 	Zombie*	zom;
 
-	zom = new Zombie(_name);
+	zom = new Zombie(name);
 	return (zom);
 }

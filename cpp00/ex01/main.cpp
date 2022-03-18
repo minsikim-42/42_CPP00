@@ -3,39 +3,17 @@
 
 int	what_is_cmd(std::string cmd)
 {
-	int			i;
-	int			no;
 	std::string	exit = "EXIT";
 	std::string	add = "ADD";
 	std::string	search = "SEARCH";
 
-	no = 0;
-	for (i = 0; cmd[i]; i++)
-	{
-		if (cmd[i] != exit[i])
-			no = -1;
-	}
-	if (no == 0 && i == 4)
+	if (cmd == "EXIT")
 		return (1);
-	no = 0;
-	for (i = 0; cmd[i]; i++)
-	{
-		if (cmd[i] != add[i])
-			no = -1;
-	}
-	if (no == 0 && i == 3)
+	else if (cmd == "ADD")
 		return (2);
-	no = 0;
-	if (cmd == "SEARCH")
+	else if (cmd == "SEARCH")
 		return (3);
-	// for (i = 0; cmd[i]; i++)
-	// {
-	// 	if (cmd[i] != search[i])
-	// 		no = -1;
-	// }
-	// if (no == 0 && i == 6)
-	// 	return (3);
-	return (no);
+	return (-1);
 }
 
 int	main()
@@ -46,11 +24,10 @@ int	main()
 	
 	while (1)
 	{
-		std::wcout << "Enter a command (ADD or SEARCH or EXIT): ";
+		std::cout << "Enter a command (ADD or SEARCH or EXIT): ";
 		std::getline(std::cin, cmd);
-		if (cmd == "\0")
-			break ;
-		
+		if (cmd == "\0" && std::cin.eof() == 1)
+			exit(0);
 		switch (what_is_cmd(cmd)) // cmd == "EXIT" or cmd.compare("EXIT") == 0
 		{
 			case (1): // EXIT

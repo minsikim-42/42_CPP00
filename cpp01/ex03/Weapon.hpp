@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 15:50:12 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/12 18:29:54 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/16 21:19:44 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 class	Weapon
 {
 private :
-	std::string	Type;
+	std::string	Type_;
 public :
 	Weapon();
-	Weapon(std::string _Type);
+	Weapon(std::string Type);
 	std::string	getType(void);
-	void		setType(std::string _Type);
+	void		setType(std::string Type);
 };
 
 #endif

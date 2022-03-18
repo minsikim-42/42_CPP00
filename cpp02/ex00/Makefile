@@ -1,10 +1,8 @@
-NAME = replace
+NAME = Fixed
 CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
-CPP = main.cpp \
-		# HumanA.cpp \
-		# HumanB.cpp \
-		# Weapon.cpp
+CPP = Fixed.cpp \
+		main.cpp
 OBJECT = $(CPP:.cpp=.o)
 
 all : $(NAME)

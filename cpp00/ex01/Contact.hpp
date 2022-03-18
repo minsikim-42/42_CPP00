@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:05:46 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 21:11:33 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:23:01 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class Contact
 {
 	private :
 	
-	int			idx;
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
+	int			idx_;
+	std::string	first_name_;
+	std::string	last_name_;
+	std::string	nickname_;
+	std::string	phone_number_;
+	std::string	darkest_secret_;
 
 	public :
 	

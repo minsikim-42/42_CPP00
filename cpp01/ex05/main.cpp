@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 16:26:40 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/16 16:32:51 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/16 20:37:17 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/16 20:41:33 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Karen.hpp"
 
-Weapon::Weapon(void)
+int	main()
 {
-
-}
-
-Weapon::Weapon(std::string Type)
-{
-	this->Type_ = Type;
-}
-
-std::string	Weapon::getType(void)
-{
-	return (Type_);
-}
-
-void	Weapon::setType(std::string Type)
-{
-	Type_ = Type;
+	Karen		karen;
+	std::string	arr[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for (int i = 0; i < 20; i++)
+	{
+		karen.complain(arr[i % 4]);
+	}
+	return (0);
 }
