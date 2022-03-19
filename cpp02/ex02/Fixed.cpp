@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:35:56 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/18 21:38:41 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/19 16:40:56 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Fixed::~Fixed()
 
 Fixed	&Fixed::operator=(const Fixed &b)
 {
-	std::cout << "Assignation operator called\n";
+	std::cout << "Assignation operator= called\n";
 	this->fixedPoint = b.getRawBits();
 	// this->fixedPoint2 = b.fixedPoint2;
 	return (*this);
@@ -82,23 +82,32 @@ Fixed	Fixed::operator/(const Fixed &b)
 
 Fixed	&Fixed::operator++(void)
 {
-	std::cout << "Assignation operator++ called\n";
+	std::cout << "Assignation ++operator called\n";
 	this->fixedPoint++;
 	// this->fixedPoint2 = b.fixedPoint2;
 	return (*this);
 }
 
-Fixed	&Fixed::operator++(int)
+Fixed	Fixed::operator++(int)
 {
 	std::cout << "Assignation operator++ called\n";
-	this->fixedPoint++;
-	return (*this);
+	Fixed	temp = *this;
+	++*this;
+	return (temp);
 }
 
 Fixed	&Fixed::operator--(void)
 {
-	std::cout << "Assignation operator-- called\n";
+	std::cout << "Assignation --operator called\n";
 	this->fixedPoint--;
+	// this->fixedPoint2 = b.fixedPoint2;
+	return (*this);
+}
+
+Fixed	&Fixed::operator--(int)
+{
+	std::cout << "Assignation operator-- called\n";
+	--this->fixedPoint;
 	// this->fixedPoint2 = b.fixedPoint2;
 	return (*this);
 }

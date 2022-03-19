@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:28:53 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/18 21:36:52 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/19 16:35:59 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ public :
 	Fixed	operator*(const Fixed &b);
 	Fixed	operator/(const Fixed &b);
 	Fixed	&operator++(void);
-	Fixed	&operator++(int);
+	Fixed	operator++(int);
 	Fixed	&operator--(void);
+	Fixed	&operator--(int);
 
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
