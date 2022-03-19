@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:35:56 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/19 20:41:40 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/19 20:44:29 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,12 +134,13 @@ Fixed	&Fixed::operator--(void)
 	return (*this);
 }
 
-Fixed	&Fixed::operator--(int)
+Fixed	Fixed::operator--(int)
 {
 	std::cout << "Assignation operator-- called\n";
+	Fixed	temp = *this;
 	--this->fixedPoint;
 	// this->fixedPoint2 = b.fixedPoint2;
-	return (*this);
+	return (temp);
 }
 
 int		Fixed::getRawBits(void) const
