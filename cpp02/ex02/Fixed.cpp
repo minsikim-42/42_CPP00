@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:35:56 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/19 16:40:56 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/19 20:41:40 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,36 @@ Fixed	Fixed::operator/(const Fixed &b)
 	return (*this);
 }
 
+bool	Fixed::operator>(const Fixed &a)
+{
+	return (this->getRawBits() > a.getRawBits());
+}
+
+bool	Fixed::operator>=(const Fixed &a)
+{
+	return (this->getRawBits() >= a.getRawBits());
+}
+
+bool	Fixed::operator<(const Fixed &a)
+{
+	return (this->getRawBits() < a.getRawBits());
+}
+
+bool	Fixed::operator<=(const Fixed &a)
+{
+	return (this->getRawBits() <= a.getRawBits());
+}
+
+bool	Fixed::operator==(const Fixed &a)
+{
+	return (this->getRawBits() == a.getRawBits());
+}
+
+bool	Fixed::operator!=(const Fixed &a)
+{
+	return (this->getRawBits() != a.getRawBits());
+}
+
 Fixed	&Fixed::operator++(void)
 {
 	std::cout << "Assignation ++operator called\n";
@@ -131,6 +161,14 @@ float	Fixed::toInt(void) const
 float	Fixed::toFloat(void) const
 {
 	return ((float)this->getRawBits() / (1 << fixedPoint2));
+}
+
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	else
+		return (b);
 }
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &Fixed)

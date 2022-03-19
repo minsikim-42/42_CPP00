@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 20:30:35 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/19 16:32:27 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/19 20:02:57 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main( void ) {
 	std::cout << "a++:" << a++ << std::endl;
 	std::cout << "a:" << a << std::endl;
 	std::cout << "b:" << b << std::endl;
-	// std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << "max a,b:" << Fixed::max( a, b ) << std::endl;
 	return 0;
 }
