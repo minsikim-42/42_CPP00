@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 15:16:08 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/23 10:59:15 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/22 09:43:19 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/23 10:59:20 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+# include <iostream>
+# include "ClapTrap.hpp"
 
-int	main()
+class ScavTrap : public ClapTrap
 {
-	ClapTrap	John("John");
-	ClapTrap	Tom("Tom");
+private:
 
-	John.attack(Tom.get_name());
-	Tom.takeDamage(3);
-	Tom.beRepaired(3);
-	return (0);
-}
+public:
+	ScavTrap(std::string _name);
+	ScavTrap();
+	~ScavTrap();
+	void guardGate();
+	ScavTrap operator=(const ScavTrap &origin);
+};
+
+#endif

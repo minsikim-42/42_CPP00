@@ -2,6 +2,8 @@ NAME = ClapTrap
 CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
 CPP = ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
 		main.cpp
 OBJECT = $(CPP:.cpp=.o)
 
