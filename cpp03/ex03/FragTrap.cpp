@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 10:25:14 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/23 12:12:17 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/23 11:21:16 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/23 11:24:34 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
+FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 {
-	std::cout << "(SC)" << this->Name << " constructor called\n";
+	std::cout << "(FR)" << this->Name << " constructor called\n";
 	this->Name = _name;
 	this->Hitpoints = 100;
-	this->Energy_points = 50;
-	this->Attack_damage = 20;
+	this->Energy_points = 100;
+	this->Attack_damage = 30;
 }
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
-	std::cout << "(SC)" << this->Name << " Default constructor called\n";
+	std::cout << "(FR)" << this->Name << " Default constructor called\n";
 	this->Hitpoints = 100;
-	this->Energy_points = 50;
-	this->Attack_damage = 20;
+	this->Energy_points = 100;
+	this->Attack_damage = 30;
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << "(SC)" << this->Name << " destructor called\n";
+	std::cout << "(FR)" << this->Name << " destructor called\n";
 }
 
-ScavTrap	ScavTrap::operator=(const ScavTrap &origin)
+FragTrap	FragTrap::operator=(const FragTrap &origin)
 {
 	this->Name = origin.get_name();
 	this->Hitpoints = origin.get_hit();
@@ -43,7 +43,7 @@ ScavTrap	ScavTrap::operator=(const ScavTrap &origin)
 	return (*this);
 }
 
-void	ScavTrap::guardGate(void)
+void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "(SC)" << this->Name << " is now in Gate keeper mode.\n";
+	std::cout << "(FR)" << this->Name << " : \"Let's high five!!!\"\n";
 }

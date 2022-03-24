@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 15:16:08 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/23 12:17:49 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/23 11:20:03 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/23 11:22:29 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include <iostream>
+# include "ClapTrap.hpp"
 
-int	main()
+class FragTrap : public ClapTrap
 {
-	// ScavTrap* John = new ScavTrap("John");
-	ScavTrap	John("John");
-	ScavTrap	Tom("Tom");
-	ScavTrap	cp = Tom;
+private:
 
-	John.attack(Tom.get_name());
-	cp.takeDamage(3);
-	Tom.beRepaired(3);
-	std::cout << cp.get_hit() << Tom.get_hit() << std::endl;
-	Tom.guardGate();
-	// delete John;
-	return (0);
-}
+public:
+	FragTrap(std::string _name);
+	FragTrap();
+	~FragTrap();
+	void		highFivesGuys(void);
+	FragTrap	operator=(const FragTrap &origin);
+};
+
+#endif
