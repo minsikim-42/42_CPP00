@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 14:33:16 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/25 16:31:08 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:40:42 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,20 +57,20 @@ void	Harl::complain(std::string level)
 
 void	Harl::debug(void)
 {
-	std::cout << "D: What a wonderful restaurant! i love stake medium\n";
+	std::cout << "DEBUG: What a wonderful restaurant! i love stake medium\n";
 }
 
 void	Harl::info(void)
 {
-	std::cout << "I: What the... it doesn't looks medium\n";
+	std::cout << "INFO: What the... it doesn't looks medium, please call the cheif!!\n";
 }
 
 void	Harl::warning(void)
 {
-	std::cout << "W: I think if he was great chef, this terrible situation shouldn't have happened\n";
+	std::cout << "WARNNING: I think if he was great chef, this terrible situation shouldn't have happened\n";
 }
 
 void	Harl::error(void)
 {
-	std::cout << "E: no..no.. look at this. this stake is so fresh that it can run arround!!\n\n";
+	std::cout << "ERROR: no..no.. look at this. this stake is so fresh that it can run arround!!\n\n";
 }
