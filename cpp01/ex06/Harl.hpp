@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 14:39:42 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/16 17:54:33 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:24:49 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 # include <iostream>
 
-class Karen
+class Harl
 {
 private :
 	void	debug( void );
@@ -22,8 +22,8 @@ private :
 	void	warning( void );
 	void	error( void );
 public :
-	Karen();
-	~Karen();
+	Harl();
+	~Harl();
 	void	complain(std::string level);
 
 };

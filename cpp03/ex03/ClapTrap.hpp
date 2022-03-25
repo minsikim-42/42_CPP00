@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:57:01 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/23 10:59:15 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:57:33 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 class ClapTrap
 {
+private:
+
 protected:
 	std::string	Name;
 	int			Hitpoints;
 	int			Energy_points;
 	int			Attack_damage;
+
 public:
 	ClapTrap(std::string _name);
 	ClapTrap();

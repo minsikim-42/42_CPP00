@@ -6,15 +6,15 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 20:53:07 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/16 21:30:57 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:27:15 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int	main(int argc, char *argv[])
 {
-	Karen	karen;
+	Harl	Harl;
 	std::string	arr[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	
 	if (argc != 2)
@@ -38,19 +38,19 @@ int	main(int argc, char *argv[])
 	{
 		case(0) :
 		{
-			karen.complain(arr[0]);
+			Harl.complain(arr[0]);
 		}
 		case(1) :
 		{
-			karen.complain(arr[1]);
+			Harl.complain(arr[1]);
 		}
 		case(2) :
 		{
-			karen.complain(arr[2]);
+			Harl.complain(arr[2]);
 		}
 		case(3) :
 		{
-			karen.complain(arr[3]);
+			Harl.complain(arr[3]);
 			break ;
 		}
 		default :

@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:36:45 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/12 22:17:16 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/25 13:50:09 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main()
 	zoms = zombieHorde(i, input);
 	for (int j = 0; j < i; j++)
 	{
-		std::cout << "j:" << j << ", name:";
+		std::cout << "j:" << j << ", ";
 		zoms[j].announce();
 		std::cout << std::endl;
 	}

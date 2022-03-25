@@ -1,7 +1,7 @@
-NAME = Karen
+NAME = Harl
 CPPCC = c++ -std=c++98
 FLAGS = -Wall -Wextra -Werror
-CPP = Karen.cpp \
+CPP = Harl.cpp \
 		main.cpp
 OBJECT = $(CPP:.cpp=.o)
 

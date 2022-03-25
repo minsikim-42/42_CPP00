@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 16:44:34 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/11 16:46:54 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/25 13:40:30 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	randomChump(std::string name)
 {
-	Zombie*	zom;
+	Zombie	zom(name);
 
-	zom = new Zombie(name);
-	zom->announce();
-	delete zom;
+	zom.announce();
 }
