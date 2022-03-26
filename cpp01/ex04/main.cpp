@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 19:04:03 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/16 17:42:08 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/26 18:08:01 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,12 @@ int	main(int argc, char *argv[])
 		std::cout << "Error\n";
 		return (-1);
 	}
-	int	size = 0;
-	while (argv[2][size])
-		size++;
+	int	size_2 = 0;
+	while (argv[2][size_2])
+		size_2++;
+	int size_3 = 0;
+	while (argv[3][size_3])
+		size_3++;
 	str.c_str();
 	std::ifstream fin(argv[1]);
 	char	c;
@@ -35,10 +38,14 @@ int	main(int argc, char *argv[])
 	{
 		if (str[i] == argv[2][0])
 		{
-			if (str.compare(i, size, argv[2]) == 0)
+			if (str.compare(i, size_2, argv[2]) == 0)
 			{
-				str.erase(i, size);
+				str.erase(i, size_2);
 				str.insert(i, argv[3]);
+				if (size_3 == 0)
+					i--;
+				else
+					i += size_3 - 1;
 			}
 		}
 	}
