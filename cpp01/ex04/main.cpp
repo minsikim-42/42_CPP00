@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 19:04:03 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/26 18:08:01 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:05:16 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ int	main(int argc, char *argv[])
 		size_3++;
 	str.c_str();
 	std::ifstream fin(argv[1]);
+	if (fin.good() != 1)
+	{
+		std::cout << "error\n";
+		return (-1);
+	}
 	char	c;
 	while (fin.get(c))
 		str += c;
