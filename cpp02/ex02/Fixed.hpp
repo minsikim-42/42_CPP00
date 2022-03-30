@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:28:53 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/19 20:44:10 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/30 14:23:25 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ public :
 	Fixed	operator*(const Fixed &b);
 	Fixed	operator/(const Fixed &b);
 
-	bool	operator>(const Fixed &a);
-	bool	operator>=(const Fixed &a);
-	bool	operator<(const Fixed &a);
-	bool	operator<=(const Fixed &a);
-	bool	operator==(const Fixed &a);
-	bool	operator!=(const Fixed &a);
+	bool	operator>(const Fixed &a) const;
+	bool	operator>=(const Fixed &a) const;
+	bool	operator<(const Fixed &a) const;
+	bool	operator<=(const Fixed &a) const;
+	bool	operator==(const Fixed &a) const;
+	bool	operator!=(const Fixed &a) const;
 
 	Fixed	&operator++(void);
 	Fixed	operator++(int);
@@ -48,7 +48,10 @@ public :
 	void	setRawBits(int const raw);
 	float		toInt(void) const;
 	float	toFloat(void) const;
+	static Fixed		&max(Fixed &a, Fixed &b);
 	static const Fixed	&max(const Fixed &a, const Fixed &b);
+	static Fixed		&min(Fixed &a, Fixed &b);
+	static const Fixed	&min(const Fixed &a, const Fixed &b);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &Fixed);

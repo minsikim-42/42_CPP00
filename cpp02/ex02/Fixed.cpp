@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:35:56 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/29 19:36:34 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/30 14:23:29 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed(/* args */) : fixedPoint(0)
 	std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const Fixed &a)
+Fixed::Fixed(const Fixed &a) : fixedPoint(0)
 {
 	std::cout << "Copy constructor called\n";
 	*this = a;
@@ -80,32 +80,32 @@ Fixed	Fixed::operator/(const Fixed &b)
 	return (*this);
 }
 
-bool	Fixed::operator>(const Fixed &a)
+bool	Fixed::operator>(const Fixed &a) const
 {
 	return (this->getRawBits() > a.getRawBits());
 }
 
-bool	Fixed::operator>=(const Fixed &a)
+bool	Fixed::operator>=(const Fixed &a) const
 {
 	return (this->getRawBits() >= a.getRawBits());
 }
 
-bool	Fixed::operator<(const Fixed &a)
+bool	Fixed::operator<(const Fixed &a) const
 {
 	return (this->getRawBits() < a.getRawBits());
 }
 
-bool	Fixed::operator<=(const Fixed &a)
+bool	Fixed::operator<=(const Fixed &a) const
 {
 	return (this->getRawBits() <= a.getRawBits());
 }
 
-bool	Fixed::operator==(const Fixed &a)
+bool	Fixed::operator==(const Fixed &a) const
 {
 	return (this->getRawBits() == a.getRawBits());
 }
 
-bool	Fixed::operator!=(const Fixed &a)
+bool	Fixed::operator!=(const Fixed &a) const
 {
 	return (this->getRawBits() != a.getRawBits());
 }
@@ -164,9 +164,34 @@ float	Fixed::toFloat(void) const
 	return ((float)this->getRawBits() / (1 << fixedPoint2));
 }
 
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	else
+		return (b);
+}
+
 const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	else
+		return (b);
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a.getRawBits() < b.getRawBits())
 		return (a);
 	else
 		return (b);
