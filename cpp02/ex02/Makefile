@@ -1,6 +1,6 @@
 NAME = fixed
-CPPCC = c++ -std=c++98
-FLAGS = -Wall -Wextra -Werror
+CXXCC = c++ -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror
 CPP = fixed.cpp \
 		main.cpp
 OBJECT = $(CPP:.cpp=.o)
