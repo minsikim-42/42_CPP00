@@ -8,10 +8,10 @@ OBJECT = $(CPP:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJECT)
-	$(CPPCC) $(FLAGS) -o $(NAME) $(OBJECT)
+	$(CXXCC) $(CXXFLAGS) -o $(NAME) $(OBJECT)
 
 $(OBJECT) : $(CPP)
-	$(CPPCC) $(FLAGS) -c $(CPP)
+	$(CXXCC) $(CXXFLAGS) -c $(CPP)
 
 clean :
 	rm -f $(OBJECT)
