@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:35:56 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/30 14:23:29 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/30 14:34:02 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,7 @@ float	Fixed::toFloat(void) const
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)
 {
-	if (a.getRawBits() > b.getRawBits())
+	if (a > b)
 		return (a);
 	else
 		return (b);
@@ -175,7 +175,7 @@ Fixed	&Fixed::max(Fixed &a, Fixed &b)
 
 const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 {
-	if (a.getRawBits() > b.getRawBits())
+	if (a > b)
 		return (a);
 	else
 		return (b);
@@ -183,7 +183,7 @@ const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
-	if (a.getRawBits() < b.getRawBits())
+	if (a < b)
 		return (a);
 	else
 		return (b);
@@ -191,7 +191,7 @@ Fixed	&Fixed::min(Fixed &a, Fixed &b)
 
 const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
 {
-	if (a.getRawBits() < b.getRawBits())
+	if (a < b)
 		return (a);
 	else
 		return (b);
