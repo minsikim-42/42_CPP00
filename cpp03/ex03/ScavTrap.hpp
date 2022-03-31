@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 09:43:19 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/24 12:20:27 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/30 17:01:00 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,15 @@ private:
 
 public:
 	ScavTrap(std::string _name);
+	ScavTrap(const ScavTrap &origin);
 	ScavTrap();
 	~ScavTrap();
 	void guardGate();
+
+	void attack(std::string const & target); // energy
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount); // energy
+
 	ScavTrap operator=(const ScavTrap &origin);
 };
 

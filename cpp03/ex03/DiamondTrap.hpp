@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 12:31:41 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/24 12:30:42 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:40:15 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 protected:
 	using	ClapTrap::Name;
-	using	ScavTrap::Hitpoints;
+	using	ScavTrap::Hit_points;
 	using	FragTrap::Energy_points;
 	using	ScavTrap::Attack_damage;
 

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 09:43:35 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/23 10:59:25 by minsikim         ###   ########.fr       */
+/*   Created: 2022/03/22 09:43:42 by minsikim          #+#    #+#             */
+/*   Updated: 2022/03/30 16:56:50 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string _name) : Hitpoints(10), Energy_points(10), Attack_damage(0)
+ClapTrap::ClapTrap(std::string _name) : Name(_name), Hit_points(10), Energy_points(10), Attack_damage(0)
 {
-	this->Name = _name;
-	std::cout << this->Name << " structor called\n";
+	std::cout << "(ClapTrap) " << this->Name << " constructor called\n";
+}
+
+ClapTrap::ClapTrap(const ClapTrap &origin)
+{
+	*this = origin;
+	std::cout << "(ClapTrap) " << Name << " Copy constructor called\n";
 }
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default structor called\n";
+	std::cout << "(ClapTrap) Default constructor called\n";
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << this->Name << " destructor called\n";
+	std::cout << "(ClapTrap) " << this->Name << " destructor called\n";
 }
 
 std::string	ClapTrap::get_name(void) const
@@ -35,7 +40,7 @@ std::string	ClapTrap::get_name(void) const
 
 int			ClapTrap::get_hit(void) const
 {
-	return (this->Hitpoints);
+	return (this->Hit_points);
 }
 
 int			ClapTrap::get_energy(void) const
@@ -50,28 +55,44 @@ int			ClapTrap::get_attack(void) const
 
 void	ClapTrap::attack(std::string const & target)
 {
-	std::cout << "ClapTrap <" << this->Name << \
-		"> attack <" << target << ">, causing <" << this->Attack_damage << \
-			"> points of damage!\n";
+	if (this->Energy_points == 0 || Hit_points == 0)
+	{
+		std::cout << "It cant do anything\n";
+		return ;
+	}
+	this->Energy_points--;
+	std::cout << "ClapTrap " << this->Name << \
+		" attack " << target << ", causing " << this->Attack_damage << \
+			" points of damage!\n";
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	this->Hitpoints -= amount;
-	std::cout << "ClapTrap <" << this->Name << \
-		"> takes <" << amount << "> damage!\nremain: " << this->Hitpoints << std::endl;
+	Hit_points -= amount;
+	if (Hit_points < 0)
+		Hit_points = 0;
+	std::cout << "ClapTrap " << this->Name << \
+		" takes " << amount << " damage!\nremain: " << this->Hit_points << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	this->Hitpoints += amount;
-	std::cout << "ClapTrap <" << this->Name << "> " << amount << " repaire!\nremain: " << this->Hitpoints << std::endl;
+	if (this->Energy_points == 0 || Hit_points == 0)
+	{
+		std::cout << "It cant do anything\n";
+		return ;
+	}
+	this->Energy_points--;
+	this->Hit_points += amount;
+	if (Hit_points > 10)
+		Hit_points = 10;
+	std::cout << "ClapTrap " << this->Name << " " << amount << " repaire!\nremain: " << this->Hit_points << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &origin)
 {
 	this->Name = origin.get_name();
-	this->Hitpoints = origin.get_hit();
+	this->Hit_points = origin.get_hit();
 	this->Energy_points = origin.get_energy();
 	this->Attack_damage = origin.get_attack();
 	return (*this);

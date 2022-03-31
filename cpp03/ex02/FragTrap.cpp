@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:21:16 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/23 11:24:34 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:37:11 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,73 @@
 
 FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 {
-	std::cout << "(FR)" << this->Name << " constructor called\n";
 	this->Name = _name;
-	this->Hitpoints = 100;
+	this->Hit_points = 100;
 	this->Energy_points = 100;
 	this->Attack_damage = 30;
+	std::cout << "(FragTrap)" << this->Name << " constructor called\n";
 }
 
 FragTrap::FragTrap()
 {
-	std::cout << "(FR)" << this->Name << " Default constructor called\n";
-	this->Hitpoints = 100;
+	std::cout << "(FragTrap)" << this->Name << " Default constructor called\n";
+	this->Hit_points = 100;
 	this->Energy_points = 100;
 	this->Attack_damage = 30;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "(FR)" << this->Name << " destructor called\n";
+	std::cout << "(FragTrap)" << this->Name << " destructor called\n";
 }
 
 FragTrap	FragTrap::operator=(const FragTrap &origin)
 {
 	this->Name = origin.get_name();
-	this->Hitpoints = origin.get_hit();
+	this->Hit_points = origin.get_hit();
 	this->Energy_points = origin.get_energy();
 	this->Attack_damage = origin.get_attack();
 	return (*this);
 }
 
+
+void	FragTrap::attack(std::string const & target)
+{
+	if (this->Energy_points == 0 || Hit_points == 0)
+	{
+		std::cout << "It cant do anything\n";
+		return ;
+	}
+	this->Energy_points--;
+	std::cout << "FragTrap " << this->Name << \
+		" attack " << target << ", causing " << this->Attack_damage << \
+			" points of damage!\n";
+}
+
+void	FragTrap::takeDamage(unsigned int amount)
+{
+	Hit_points -= amount;
+	if (Hit_points < 0)
+		Hit_points = 0;
+	std::cout << "FragTrap " << this->Name << \
+		" takes " << amount << " damage!\nremain: " << this->Hit_points << std::endl;
+}
+
+void	FragTrap::beRepaired(unsigned int amount)
+{
+	if (this->Energy_points == 0 || Hit_points == 0)
+	{
+		std::cout << "It cant do anything\n";
+		return ;
+	}
+	this->Energy_points--;
+	this->Hit_points += amount;
+	if (Hit_points > 100)
+		Hit_points = 100;
+	std::cout << "FragTrap " << this->Name << " " << amount << " repaire!\nremain: " << this->Hit_points << std::endl;
+}
+
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "(FR)" << this->Name << " : \"Let's high five!!!\"\n";
+	std::cout << "(FragTrap)" << this->Name << " : \"Let's high five!!!\"\n";
 }
