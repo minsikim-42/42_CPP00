@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:21:16 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/31 13:37:11 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:22:02 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 	this->Hit_points = 100;
 	this->Energy_points = 100;
 	this->Attack_damage = 30;
-	std::cout << "(FragTrap)" << this->Name << " constructor called\n";
+	std::cout << "(FragTrap) " << this->Name << " constructor called\n";
 }
 
 FragTrap::FragTrap()
 {
-	std::cout << "(FragTrap)" << this->Name << " Default constructor called\n";
+	std::cout << "(FragTrap)" << "Default constructor called\n";
 	this->Hit_points = 100;
 	this->Energy_points = 100;
 	this->Attack_damage = 30;
@@ -31,10 +31,10 @@ FragTrap::FragTrap()
 
 FragTrap::~FragTrap()
 {
-	std::cout << "(FragTrap)" << this->Name << " destructor called\n";
+	std::cout << "(FragTrap) " << this->Name << " destructor called\n";
 }
 
-FragTrap	FragTrap::operator=(const FragTrap &origin)
+FragTrap	&FragTrap::operator=(const FragTrap &origin)
 {
 	this->Name = origin.get_name();
 	this->Hit_points = origin.get_hit();
@@ -42,7 +42,6 @@ FragTrap	FragTrap::operator=(const FragTrap &origin)
 	this->Attack_damage = origin.get_attack();
 	return (*this);
 }
-
 
 void	FragTrap::attack(std::string const & target)
 {
@@ -82,5 +81,5 @@ void	FragTrap::beRepaired(unsigned int amount)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "(FragTrap)" << this->Name << " : \"Let's high five!!!\"\n";
+	std::cout << "FragTrap " << this->Name << " : \"Let's high five!!!\"\n";
 }

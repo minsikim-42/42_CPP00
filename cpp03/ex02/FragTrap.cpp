@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:21:16 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/31 13:37:11 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:21:40 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ FragTrap::~FragTrap()
 	std::cout << "(FragTrap)" << this->Name << " destructor called\n";
 }
 
-FragTrap	FragTrap::operator=(const FragTrap &origin)
+FragTrap	&FragTrap::operator=(const FragTrap &origin)
 {
 	this->Name = origin.get_name();
 	this->Hit_points = origin.get_hit();
@@ -82,5 +82,5 @@ void	FragTrap::beRepaired(unsigned int amount)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "(FragTrap)" << this->Name << " : \"Let's high five!!!\"\n";
+	std::cout << "FragTrap " << this->Name << " : \"Let's high five!!!\"\n";
 }

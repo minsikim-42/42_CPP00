@@ -6,22 +6,24 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:16:08 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/23 11:25:43 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:11:04 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main()
 {
-	FragTrap	John("John");
-	FragTrap	Tom("Tom");
-	FragTrap	cp = Tom;
+	DiamondTrap	John("John");
+	DiamondTrap	Tom("Tom");
+	// DiamondTrap	cp(Tom);
 
-	John.attack(Tom.get_name());
-	cp.takeDamage(3);
-	Tom.beRepaired(3);
-	std::cout << cp.get_hit() << Tom.get_hit();
-	Tom.highFivesGuys();
+	John.attack("Tom");
+	Tom.takeDamage(John.get_attack());
+	Tom.beRepaired(50);
+	Tom.attack("John");
+	John.takeDamage(Tom.get_attack());
+	// std::cout << "    cp    :" << cp.get_hit() << "\n    Tom   :" << Tom.get_hit() << std::endl;
+	Tom.whoAmI();
 	return (0);
 }

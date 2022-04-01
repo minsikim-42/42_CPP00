@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 09:43:19 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/30 17:01:00 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:07:16 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 private:
+	std::string	Name;
 
 public:
 	ScavTrap(std::string _name);
@@ -30,7 +31,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount); // energy
 
-	ScavTrap operator=(const ScavTrap &origin);
+	ScavTrap	&operator=(const ScavTrap &origin);
 };
 
 #endif

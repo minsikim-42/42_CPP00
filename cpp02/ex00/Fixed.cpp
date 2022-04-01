@@ -6,11 +6,13 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 14:35:56 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/29 19:29:53 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/03/31 21:16:49 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::fixedPoint2 = 8;
 
 Fixed::Fixed(/* args */) : fixedPoint(0)
 {

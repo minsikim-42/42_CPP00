@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:16:08 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/30 17:08:00 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:18:46 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	main()
 	// ScavTrap* John = new ScavTrap("John");
 	ScavTrap	John("John");
 	ScavTrap	Tom("Tom");
-	ScavTrap	cp(Tom);
 
-	John.attack(Tom.get_name());
-	cp.takeDamage(33);
-	Tom.takeDamage(22);
-	Tom.beRepaired(44);
-	std::cout << "cp:" << cp.get_hit() << " Tom:" << Tom.get_hit() << std::endl;
+	John.attack("Tom");
+	Tom.takeDamage(John.get_attack());
+	Tom.beRepaired(50);
+	std::cout << " Tom:" << Tom.get_hit() << std::endl;
 	Tom.guardGate();
-	// delete John;
+	Tom.takeDamage(111);
+	Tom.beRepaired(50);
+	Tom.attack("John");
 	return (0);
 }

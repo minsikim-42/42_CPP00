@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:20:03 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/30 17:17:32 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:06:45 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 private:
+	std::string	Name;
 
 public:
 	FragTrap(std::string _name);
@@ -29,7 +30,7 @@ public:
 	void beRepaired(unsigned int amount); // energy
 
 	void		highFivesGuys(void);
-	FragTrap	operator=(const FragTrap &origin);
+	FragTrap	&operator=(const FragTrap &origin);
 };
 
 #endif

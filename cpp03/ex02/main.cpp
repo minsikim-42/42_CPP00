@@ -6,22 +6,24 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:16:08 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/30 17:16:22 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:20:50 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
 
 int	main()
 {
 	FragTrap	John("John");
-	FragTrap	Tom("Tom");
-	FragTrap	cp = Tom;
+	ScavTrap	Tom("Tom");
 
-	John.attack(Tom.get_name());
-	cp.takeDamage(3);
-	Tom.beRepaired(3);
-	std::cout << cp.get_hit() << Tom.get_hit();
-	Tom.highFivesGuys();
+	John.attack("Tom");
+	Tom.takeDamage(John.get_attack());
+	Tom.beRepaired(50);
+	std::cout << "" << Tom.get_hit() << std::endl;
+	John.highFivesGuys();
+	Tom.guardGate();
 	return (0);
 }

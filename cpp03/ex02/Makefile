@@ -1,6 +1,6 @@
 NAME = ClapTrap
-CPPCC = c++ -std=c++98
-FLAGS = -Wall -Wextra -Werror
+CPPCC = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = ClapTrap.cpp \
 		ScavTrap.cpp \
 		FragTrap.cpp \
