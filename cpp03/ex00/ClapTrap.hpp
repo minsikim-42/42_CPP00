@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 20:57:01 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/30 17:08:49 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:30:32 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ private:
 	int			Attack_damage;
 
 public:
+	ClapTrap();
 	ClapTrap(std::string _name);
 	ClapTrap(const ClapTrap &origin);
-	ClapTrap();
 	~ClapTrap();
 	std::string	get_name(void) const;
 	int			get_hit(void) const;

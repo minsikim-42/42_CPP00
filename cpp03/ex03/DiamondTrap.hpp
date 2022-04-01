@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 12:31:41 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/01 20:54:19 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:35:41 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ private:
 	using	FragTrap::Attack_damage;
 
 public:
+	DiamondTrap();
 	DiamondTrap(std::string _name);
 	DiamondTrap(const DiamondTrap &origin);
-	DiamondTrap();
 	~DiamondTrap();
 
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount); // energy
 	using	ScavTrap::attack; // Scav // energy
-	void	whoAmI();
-	
 	DiamondTrap	&operator=(const DiamondTrap &origin);
+	
+	void	whoAmI();
 };
 
 #endif

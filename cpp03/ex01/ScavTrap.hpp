@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 09:43:19 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/01 21:22:50 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/01 21:30:51 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ private:
 	std::string	Name;
 
 public:
+	ScavTrap();
 	ScavTrap(std::string _name);
 	ScavTrap(const ScavTrap &origin);
-	ScavTrap();
 	~ScavTrap();
 	void	guardGate();
 
