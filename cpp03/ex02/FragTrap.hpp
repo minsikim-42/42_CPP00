@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:20:03 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/01 21:31:36 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/02 15:57:32 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class FragTrap : public ClapTrap
 {
 private:
-	std::string	Name;
 
 public:
 	FragTrap();

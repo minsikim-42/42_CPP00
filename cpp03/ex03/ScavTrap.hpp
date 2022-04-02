@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 09:43:19 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/01 21:38:13 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/02 15:30:26 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class ScavTrap : virtual public ClapTrap
 {
 private:
-	std::string	Name;
+	// std::string	Name;
 
 public:
 	ScavTrap(std::string _name);
