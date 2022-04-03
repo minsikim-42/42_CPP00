@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 09:43:42 by minsikim          #+#    #+#             */
-/*   Updated: 2022/03/30 16:56:50 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:35:44 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	Hit_points -= amount;
 	if (Hit_points < 0)
 		Hit_points = 0;
-	std::cout << "ClapTrap " << this->Name << \
+	std::cout << this->Name << \
 		" takes " << amount << " damage!\nremain: " << this->Hit_points << std::endl;
 }
 
@@ -84,9 +84,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	this->Energy_points--;
 	this->Hit_points += amount;
-	if (Hit_points > 10)
-		Hit_points = 10;
-	std::cout << "ClapTrap " << this->Name << " " << amount << " repaire!\nremain: " << this->Hit_points << std::endl;
+	// if (Hit_points > 10)
+	// 	Hit_points = 10;
+	std::cout << this->Name << " " << amount << " repaire!\nremain: " << this->Hit_points << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &origin)

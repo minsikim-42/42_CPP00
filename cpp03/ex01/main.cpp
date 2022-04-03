@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:16:08 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/01 21:18:46 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:38:30 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main()
 {
 	// ScavTrap* John = new ScavTrap("John");
+	ClapTrap	test("test");
 	ScavTrap	John("John");
 	ScavTrap	Tom("Tom");
 
@@ -26,5 +27,6 @@ int	main()
 	Tom.takeDamage(111);
 	Tom.beRepaired(50);
 	Tom.attack("John");
+	test.attack("John");
 	return (0);
 }

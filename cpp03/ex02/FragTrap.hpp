@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:20:03 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/02 15:57:32 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:40:05 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
 	~FragTrap();
 
 	void attack(std::string const & target); // energy
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount); // energy
+	// void takeDamage(unsigned int amount);
+	// void beRepaired(unsigned int amount); // energy
 
 	void		highFivesGuys(void);
 	FragTrap	&operator=(const FragTrap &origin);

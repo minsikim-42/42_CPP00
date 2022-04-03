@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:21:16 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/02 15:57:28 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:48:54 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ FragTrap::~FragTrap()
 
 FragTrap	&FragTrap::operator=(const FragTrap &origin)
 {
-	this->Name = origin.get_name();
-	this->Hit_points = origin.get_hit();
-	this->Energy_points = origin.get_energy();
-	this->Attack_damage = origin.get_attack();
+	this->Name = origin.Name;
+	this->Hit_points = origin.Hit_points;
+	this->Energy_points = origin.Energy_points;
+	this->Attack_damage = origin.Attack_damage;
 	return (*this);
 }
 
@@ -63,28 +63,28 @@ void	FragTrap::attack(std::string const & target)
 			" points of damage!\n";
 }
 
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	Hit_points -= amount;
-	if (Hit_points < 0)
-		Hit_points = 0;
-	std::cout << "FragTrap " << this->Name << \
-		" takes " << amount << " damage!\nremain: " << this->Hit_points << std::endl;
-}
+// void	FragTrap::takeDamage(unsigned int amount)
+// {
+// 	Hit_points -= amount;
+// 	if (Hit_points < 0)
+// 		Hit_points = 0;
+// 	std::cout << "FragTrap " << this->Name << \
+// 		" takes " << amount << " damage!\nremain: " << this->Hit_points << std::endl;
+// }
 
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	if (this->Energy_points == 0 || Hit_points == 0)
-	{
-		std::cout << "It cant do anything\n";
-		return ;
-	}
-	this->Energy_points--;
-	this->Hit_points += amount;
-	if (Hit_points > 100)
-		Hit_points = 100;
-	std::cout << "FragTrap " << this->Name << " " << amount << " repaire!\nremain: " << this->Hit_points << std::endl;
-}
+// void	FragTrap::beRepaired(unsigned int amount)
+// {
+// 	if (this->Energy_points == 0 || Hit_points == 0)
+// 	{
+// 		std::cout << "It cant do anything\n";
+// 		return ;
+// 	}
+// 	this->Energy_points--;
+// 	this->Hit_points += amount;
+// 	if (Hit_points > 100)
+// 		Hit_points = 100;
+// 	std::cout << "FragTrap " << this->Name << " " << amount << " repaire!\nremain: " << this->Hit_points << std::endl;
+// }
 
 void	FragTrap::highFivesGuys(void)
 {

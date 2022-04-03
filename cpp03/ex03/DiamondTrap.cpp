@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 12:49:46 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/02 16:13:20 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:53:59 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,29 +41,6 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "(DiamondTrap) " << this->Name << " destructor called\n";
 }
 
-void	DiamondTrap::takeDamage(unsigned int amount)
-{
-	Hit_points -= amount;
-	if (Hit_points < 0)
-		Hit_points = 0;
-	std::cout << "DiamondTrap " << this->Name << \
-		" takes " << amount << " damage!\nremain: " << this->Hit_points << std::endl;
-}
-
-void	DiamondTrap::beRepaired(unsigned int amount)
-{
-	if (this->Energy_points == 0 || Hit_points == 0)
-	{
-		std::cout << "It cant do anything\n";
-		return ;
-	}
-	this->Energy_points--;
-	this->Hit_points += amount;
-	if (Hit_points > 100) // frag
-		Hit_points = 100;
-	std::cout << "DiamondTrap " << this->Name << " " << amount << " repaire!\nremain: " << this->Hit_points << std::endl;
-}
-
 void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "   this   :" << this->Name << std::endl;
@@ -72,9 +49,9 @@ void	DiamondTrap::whoAmI(void)
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &origin)
 {
-	this->Name = origin.get_name();
-	this->Hit_points = origin.get_hit();
-	this->Energy_points = origin.get_energy();
-	this->Attack_damage = origin.get_attack();
+	this->Name = origin.Name;
+	this->Hit_points = origin.Hit_points;
+	this->Energy_points = origin.Energy_points;
+	this->Attack_damage = origin.Attack_damage;
 	return (*this);
 }
