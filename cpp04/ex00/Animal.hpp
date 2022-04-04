@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 11:44:36 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/02 11:50:32 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:12:30 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ public:
 	Animal();
 	Animal(const Animal &origin);
 	~Animal();
-	void	make_sound(void);
+	std::string	getType(void) const;
+	void	makeSound(void) const;
 	Animal	&operator=(const Animal &origin);
-}
+};
+
+#endif
