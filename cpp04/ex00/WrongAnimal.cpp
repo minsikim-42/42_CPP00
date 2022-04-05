@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:50:43 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 19:43:14 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 20:32:09 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "Default Animal constructor called\n";
+	std::cout << "Default WrongAnimal constructor called\n";
 }
 
-Animal::Animal(const Animal &animal)
+WrongAnimal::WrongAnimal(const WrongAnimal &Wronganimal)
 {
-	std::cout << "Copy Animal constructor called\n";
-	*this = animal;
+	std::cout << "Copy WrongAnimal constructor called\n";
+	*this = Wronganimal;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal destructor called\n";	
+	std::cout << "WrongAnimal destructor called\n";
 }
 
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return (type);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "Animal\n";
+	std::cout << "WrongAnimal\n";
 }
 
-Animal	&Animal::operator=(const Animal &animal)
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &Wronganimal)
 {
-	type = animal.getType();
+	type = Wronganimal.getType();
 	return (*this);
 }

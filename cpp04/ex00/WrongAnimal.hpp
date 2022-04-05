@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 14:09:19 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 19:35:38 by minsikim         ###   ########.fr       */
+/*   Created: 2022/04/02 11:44:36 by minsikim          #+#    #+#             */
+/*   Updated: 2022/04/05 20:38:12 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 # include <iostream>
-# include "Animal.hpp"
 
-class Brain : public Animal
+class WrongAnimal
 {
-private:
-	std::string	ideas[100];
-	int			i;
+protected:
+	std::string	type;
 
 public:
-	Brain();
-	Brain(const Brain &brain);
-	~Brain();
-	void	print_ideas(void) const;
-	void	add_ideas(std::string idea);
-	Brain	&operator=(const Brain &brain);
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &origin);
+	~WrongAnimal();
+	std::string	getType(void) const;
+	void	makeSound(void) const;
+	WrongAnimal	&operator=(const WrongAnimal &origin);
 };
 
 #endif

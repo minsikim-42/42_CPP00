@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:25:32 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 14:19:57 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 19:42:16 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Cat::Cat()
 
 Cat::Cat(const Cat &cat)
 {
+	std::cout << "Copy Cat constructor called\n";
 	*this = cat;
 }
 

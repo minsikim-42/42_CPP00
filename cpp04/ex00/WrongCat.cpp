@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:25:32 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 19:44:35 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 20:33:35 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	std::cout << "Default Cat constructor called\n";
-	brain = new Brain();
-	type = "Cat";
+	std::cout << "Default WrongCat constructor called\n";
+	type = "WrongCat";
 }
 
-Cat::Cat(const Cat &cat)
+WrongCat::WrongCat(const WrongCat &Wrongcat)
 {
-	std::cout << "Copy Cat constructor called\n";
-	*this = cat;
+	std::cout << "Copy WrongCat constructor called\n";
+	*this = Wrongcat;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat destructor called\n";
-	delete brain;
+	std::cout << "WrongCat destructor called\n";
 }
 
-void	Cat::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
 	std::cout << "Mew~\n";
 }
 
-Cat	&Cat::operator=(const Cat &cat)
+WrongCat	&WrongCat::operator=(const WrongCat &Wrongcat)
 {
-	this->type = cat.getType();
+	this->type = Wrongcat.getType();
 	return (*this);
 }

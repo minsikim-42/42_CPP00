@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:50:43 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 14:19:20 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 19:41:51 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Animal::Animal()
 
 Animal::Animal(const Animal &animal)
 {
+	std::cout << "Copy Animal constructor called\n";
 	*this = animal;
 }
 

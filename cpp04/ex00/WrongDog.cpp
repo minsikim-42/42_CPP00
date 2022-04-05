@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongDog.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:50:36 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 19:45:01 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 20:34:26 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongDog.hpp"
 
-Dog::Dog()
+WrongDog::WrongDog()
 {
-	std::cout << "Default Dog constructor called\n";
-	brain = new Brain();
-	type = "Dog";
+	std::cout << "Default WrongDog constructor called\n";
+	type = "WrongDog";
 }
 
-Dog::Dog(const Dog &Dog)
+WrongDog::WrongDog(const WrongDog &WrongDog)
 {
-	std::cout << "Copy Dog constructor called\n";
-	*this = Dog;
+	std::cout << "Copy WrongDog constructor called\n";
+	*this = WrongDog;
 }
 
-Dog::~Dog()
+WrongDog::~WrongDog()
 {
-	std::cout << "Dog destructor called\n";
-	delete brain;
+	std::cout << "WrongDog destructor called\n";
 }
 
-void	Dog::makeSound(void) const
+void	WrongDog::makeSound(void) const
 {
 	std::cout << "Bark!\n";
 }
 
-Dog	&Dog::operator=(const Dog &dog)
+WrongDog	&WrongDog::operator=(const WrongDog &Wrongdog)
 {
-	this->type = dog.getType();
+	this->type = Wrongdog.getType();
 	return (*this);
 }

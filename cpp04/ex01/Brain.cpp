@@ -6,32 +6,34 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:36:44 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 17:40:33 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 19:43:49 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain()
+Brain::Brain() : i(0)
 {
+	std::cout << "Default Brain constructor called\n";
 }
 
 Brain::Brain(const Brain &Brain)
 {
+	std::cout << "Copy Brain constructor called\n";
 	*this = Brain;
 }
 
 Brain::~Brain()
 {
-}
-
-std::array<std::basic_string, 100>	Brain::get_ideas(void) const
-{
-	return (ideas);
+	std::cout << "Brain destructor called\n";
 }
 
 Brain	&Brain::operator=(const Brain &Brain)
 {
-	this->ideas = Brain.get_ideas();
+	this->i = Brain.i;
+	for (int j = 0; j < i; j++)
+	{
+		this->ideas[i] = Brain.ideas[i];
+	}
 	return (*this);
 }

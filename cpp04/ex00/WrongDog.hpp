@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongDog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 14:09:19 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 19:35:38 by minsikim         ###   ########.fr       */
+/*   Created: 2022/04/05 12:50:04 by minsikim          #+#    #+#             */
+/*   Updated: 2022/04/05 20:34:24 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef WRONGDOG_HPP
+# define WRONGDOG_HPP
 # include <iostream>
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Brain : public Animal
+class WrongDog : public WrongAnimal
 {
-private:
-	std::string	ideas[100];
-	int			i;
-
 public:
-	Brain();
-	Brain(const Brain &brain);
-	~Brain();
-	void	print_ideas(void) const;
-	void	add_ideas(std::string idea);
-	Brain	&operator=(const Brain &brain);
+	WrongDog();
+	WrongDog(const WrongDog &WrongDog);
+	~WrongDog();
+	void	makeSound(void) const;
+	WrongDog	&operator=(const WrongDog &WrongDog);
 };
 
 #endif
