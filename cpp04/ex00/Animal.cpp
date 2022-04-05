@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:50:43 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/04 12:12:35 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 14:19:20 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Animal::Animal()
 {
+	std::cout << "Default Animal constructor called\n";
 }
 
 Animal::Animal(const Animal &animal)
@@ -23,7 +24,7 @@ Animal::Animal(const Animal &animal)
 
 Animal::~Animal()
 {
-
+	std::cout << "Animal destructor called\n";
 }
 
 std::string	Animal::getType(void) const
@@ -31,9 +32,9 @@ std::string	Animal::getType(void) const
 	return (type);
 }
 
-void	makeSound(void) const
+void	Animal::makeSound(void) const
 {
-	std::cout << "?\n";
+	std::cout << "Animal\n";
 }
 
 Animal	&Animal::operator=(const Animal &animal)

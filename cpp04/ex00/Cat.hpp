@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 11:46:29 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/03 21:49:56 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:24:53 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ public:
 	Cat();
 	Cat(const Cat &cat);
 	~Cat();
-	void	makeSound(void);
+	void	makeSound(void) const;
+	Cat	&operator=(const Cat &cat);
 };
 
 #endif

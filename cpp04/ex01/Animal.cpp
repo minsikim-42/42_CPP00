@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 11:44:36 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 14:04:51 by minsikim         ###   ########.fr       */
+/*   Created: 2022/04/03 21:50:43 by minsikim          #+#    #+#             */
+/*   Updated: 2022/04/05 14:02:43 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
+#include "Animal.hpp"
 
-class Animal
+Animal::Animal()
 {
-protected:
-	std::string	type;
+}
 
-public:
-	Animal();
-	Animal(const Animal &origin);
-	virtual ~Animal();
-	std::string	getType(void) const;
-	virtual void	makeSound(void) const;
-	Animal	&operator=(const Animal &origin);
-};
+Animal::Animal(const Animal &animal)
+{
+	*this = animal;
+}
 
-#endif
+Animal::~Animal()
+{
+	
+}
+
+std::string	Animal::getType(void) const
+{
+	return (type);
+}
+
+void	Animal::makeSound(void) const
+{
+	std::cout << "Animal\n";
+}
+
+Animal	&Animal::operator=(const Animal &animal)
+{
+	type = animal.getType();
+	return (*this);
+}

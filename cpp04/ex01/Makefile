@@ -4,7 +4,8 @@ CXXCC = c++
 FILE = main.cpp \
 		Animal.cpp \
 		Cat.cpp \
-		Dog.cpp
+		Dog.cpp \
+		Brain.cpp
 
 OBJECT = $(FILE:.cpp=.o)
 

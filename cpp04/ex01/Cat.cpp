@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 11:44:36 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 14:04:51 by minsikim         ###   ########.fr       */
+/*   Created: 2022/04/05 12:25:32 by minsikim          #+#    #+#             */
+/*   Updated: 2022/04/05 15:26:44 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
+#include "Cat.hpp"
 
-class Animal
+Cat::Cat()
 {
-protected:
-	std::string	type;
+	brain = new Brain();
+	type = "Cat";
+}
 
-public:
-	Animal();
-	Animal(const Animal &origin);
-	virtual ~Animal();
-	std::string	getType(void) const;
-	virtual void	makeSound(void) const;
-	Animal	&operator=(const Animal &origin);
-};
+Cat::Cat(const Cat &cat)
+{
+	*this = cat;
+}
 
-#endif
+Cat::~Cat()
+{
+	delete brain;
+}
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "Mew~\n";
+}
+
+Cat	&Cat::operator=(const Cat &cat)
+{
+	this->type = cat.getType();
+	return (*this);
+}

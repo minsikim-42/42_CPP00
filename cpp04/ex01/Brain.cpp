@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 11:44:36 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 14:04:51 by minsikim         ###   ########.fr       */
+/*   Created: 2022/04/05 15:36:44 by minsikim          #+#    #+#             */
+/*   Updated: 2022/04/05 17:40:33 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <iostream>
+#include "Brain.hpp"
 
-class Animal
+Brain::Brain()
 {
-protected:
-	std::string	type;
+}
 
-public:
-	Animal();
-	Animal(const Animal &origin);
-	virtual ~Animal();
-	std::string	getType(void) const;
-	virtual void	makeSound(void) const;
-	Animal	&operator=(const Animal &origin);
-};
+Brain::Brain(const Brain &Brain)
+{
+	*this = Brain;
+}
 
-#endif
+Brain::~Brain()
+{
+}
+
+std::array<std::basic_string, 100>	Brain::get_ideas(void) const
+{
+	return (ideas);
+}
+
+Brain	&Brain::operator=(const Brain &Brain)
+{
+	this->ideas = Brain.get_ideas();
+	return (*this);
+}
