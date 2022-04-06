@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:50:12 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/06 16:09:35 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:34:38 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	test(void)
 			std::cout << "-------------------\n";
 		}
 	}
-
+	const Cat deepcopy = *(Cat *)(Animal_array[1]);
+	const Dog deepcopy2 = *(Dog *)(Animal_array[2]);
 	for (int i = 0; i < 4; i++)
 	{
 		delete Animal_array[i];
@@ -61,6 +62,6 @@ void	test(void)
 
 int main() {
 	test();
-	// system("leaks Animal");
+	system("leaks Animal");
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:50:43 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/05 19:43:14 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:36:16 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,6 @@ Animal::~Animal()
 std::string	Animal::getType(void) const
 {
 	return (type);
-}
-
-void	Animal::makeSound(void) const
-{
-	std::cout << "Animal\n";
 }
 
 Animal	&Animal::operator=(const Animal &animal)
