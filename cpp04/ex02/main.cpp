@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:50:12 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/06 14:48:08 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:09:50 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 void	test(void)
 {
-	// Animal	hi; Error
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	delete j;//should not create a leak
