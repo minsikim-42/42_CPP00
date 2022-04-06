@@ -2,16 +2,16 @@
 
 int main()
 {
-	float f = 42.42;
-	int i = 7;
-
-	std::cout << f << std::endl << i << std::endl;
-	for (int k = 0; k < 32; k++)
+	int i = 10;
+	try
 	{
-		std::cout << ((i << (31 - k) >> 31) & 1);
+		if (i > 5)
+			throw i;
+		std::cout << " hi hi\n";
 	}
-	for (int k = 0; k < 32; k++)
+	catch(int i)
 	{
-		std::cout << (f * (1 << (31 - k))) << std::endl;
+		std::cout << i << " catch\n";
 	}
+	std::cout << " hi\n";
 }
