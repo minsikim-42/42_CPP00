@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:39:41 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/07 13:48:30 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/09 00:52:35 by minsikkim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
-# include <iostream>
+# include <iostream> //
 
 class Bureaucrat
 {
