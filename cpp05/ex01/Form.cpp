@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:36:25 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/08 15:43:44 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/09 00:41:38 by minsikkim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#includ "Form.hpp"
+#include "Form.hpp"
 
 Form::Form()
 {
