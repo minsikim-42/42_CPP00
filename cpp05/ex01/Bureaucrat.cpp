@@ -3,18 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:57:51 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/07 13:48:26 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:36:49 by minsikkim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Default name"), grade(1)
+Bureaucrat::Bureaucrat() : name("Default name"), grade(150)
 {
 
+}
+
+Bureaucrat::Bureaucrat(std::string name_, int grade_) : name(name_), grade(grade_)
+{
+	if (this->grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else if (this->grade < 1)
+		throw Bureaucrat::GradeTooHighException();
 }
 	
 Bureaucrat::Bureaucrat(const Bureaucrat &origin)
@@ -57,6 +65,23 @@ void		Bureaucrat::decrementGrade(int amount)
 	if (grade + amount > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->grade += amount;
+}
+
+void		Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name;
+		std::cout << "-Bureaucrat signed " << form.get_name() << "-form" << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << this->name;
+		std::cerr << "-Bureaucrat couldn't sign ";
+		std::cerr << this->name << "-form because ";
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw()

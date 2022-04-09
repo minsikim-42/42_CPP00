@@ -2,7 +2,8 @@ NAME = Bureaucrat
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXXCC = c++
 FILE = main.cpp \
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 
 OBJECT = $(FILE:.cpp=.o)
 
