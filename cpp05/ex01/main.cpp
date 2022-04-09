@@ -36,8 +36,8 @@ int main()
 	Form f("f", 20, 70);
 	try
 	{
-		f.beSigned(a);
-		f.beSigned(b);
+		a.signForm(f);
+		b.signForm(f);
 		
 		// f.beSigned(c);
 	}

@@ -6,13 +6,15 @@
 /*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:13:07 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/09 16:23:56 by minsikkim        ###   ########.fr       */
+/*   Updated: 2022/04/09 16:58:04 by minsikkim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 # include <iostream>
+
+class Form;
 # include "Bureaucrat.hpp"
 
 

@@ -6,13 +6,15 @@
 /*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:39:41 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/09 16:37:18 by minsikkim        ###   ########.fr       */
+/*   Updated: 2022/04/09 16:59:13 by minsikkim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
+
+class Bureaucrat; //undeclared identifier
 # include "Form.hpp"
 
 class Bureaucrat
