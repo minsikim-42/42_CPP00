@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 17:39:41 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/10 15:28:50 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/10 13:50:51 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	void		decrementGrade(int amount);
 
 	void		signForm(Form &form);
+	void		executeForm(Form const & form);
 
 	class GradeTooHighException : public std::exception
 	{

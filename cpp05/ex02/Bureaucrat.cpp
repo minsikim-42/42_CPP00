@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:57:51 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/10 15:29:10 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:29:45 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,30 @@ void		Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << this->name;
+		std::cout << "Sign-success!!\n" << this->name;
 		std::cout << "-Bureaucrat signed " << form.get_name() << "-form" << std::endl;
 	}
 	catch(const std::exception &e)
 	{
+		std::cerr << "Sign-Failed!!\n";
 		std::cerr << this->name;
 		std::cerr << "-Bureaucrat couldn't sign ";
 		std::cerr << this->name << "-form because ";
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+void		Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		std::cerr << "Exec-success!!\n";
+		form.execute(*this);
+		std::cout << this->name << "-Bureaucrat excute " << form.get_name() << "Form\n";
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << "Exec-Failed!!\n";
 		std::cerr << e.what() << std::endl;
 	}
 }
