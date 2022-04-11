@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
+/*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:36:25 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/09 16:27:38 by minsikkim        ###   ########.fr       */
+/*   Updated: 2022/04/11 14:47:04 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ const char	*Form::GradeTooLowException::what() const throw()
 
 void		Form::beSigned(const Bureaucrat &bu)
 {
-	if (bu.getGrade() >= this->sign_grade)
+	if (bu.getGrade() > this->sign_grade)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		is_signed = true;

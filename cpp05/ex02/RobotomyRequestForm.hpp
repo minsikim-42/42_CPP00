@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:09:39 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/11 10:52:16 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/11 13:09:41 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 # include <iostream>
-# include <fstream>
 # include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
 private:
 	std::string		target;
 public:
-	ShrubberyCreationForm(/* args */);
-	ShrubberyCreationForm(const ShrubberyCreationForm &sh);
-	~ShrubberyCreationForm();
-	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &);
-	ShrubberyCreationForm(std::string target);
+	RobotomyRequestForm(/* args */);
+	RobotomyRequestForm(const RobotomyRequestForm &sh);
+	~RobotomyRequestForm();
+	RobotomyRequestForm &operator=(const RobotomyRequestForm &);
+	RobotomyRequestForm(std::string target);
 
 	std::string	get_target(void) const;
 
-	void	make_tree(std::string target) const;
+	void	make_robot(std::string target) const;
 
 	void	execute(Bureaucrat const & executor) const;
 };

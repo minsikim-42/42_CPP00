@@ -6,7 +6,8 @@ FILE = main.cpp \
 		Form.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp \
+		Intern.cpp
 
 OBJECT = $(FILE:.cpp=.o)
 
