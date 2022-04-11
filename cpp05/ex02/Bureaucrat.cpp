@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:57:51 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/11 14:57:31 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/11 20:39:03 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void		Bureaucrat::incrementGrade(int amount)
 {
 	if (grade - amount < 1)
 	{
-		std::cout << "Too high!";
 		throw Bureaucrat::GradeTooHighException();
 	}
 	this->grade -= amount;
@@ -96,7 +95,7 @@ void		Bureaucrat::executeForm(Form const &form)
 	catch (std::exception &e)
 	{
 		std::cerr << "Exec-Failed!!\n(";
-		std::cerr << e.what() << ")" << std::endl;
+		std::cerr << e.what() << ")\n" << std::endl;
 	}
 }
 

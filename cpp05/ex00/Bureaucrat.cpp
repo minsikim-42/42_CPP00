@@ -6,13 +6,13 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:57:51 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/07 13:48:26 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/11 20:31:05 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Default name"), grade(1)
+Bureaucrat::Bureaucrat() : name("Default name"), grade(150)
 {
 
 }
@@ -46,7 +46,6 @@ void		Bureaucrat::incrementGrade(int amount)
 {
 	if (grade - amount < 1)
 	{
-		std::cout << "Too high!";
 		throw Bureaucrat::GradeTooHighException();
 	}
 	this->grade -= amount;

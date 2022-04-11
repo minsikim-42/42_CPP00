@@ -5,21 +5,21 @@
 
 int main()
 {
-	ShrubberyCreationForm	sh("target");
-	RobotomyRequestForm		ro("bobobo");
-	PresidentialPardonForm	pr("pr");
+	ShrubberyCreationForm	sh("target"); // 145 137
+	RobotomyRequestForm		ro("bobobo"); // 72 45
+	PresidentialPardonForm	pr("pr"); // 25 5
 
 	Bureaucrat				hi("hi", 70);
 	Bureaucrat				king("king", 1);
 
-	std::cout << hi.getGrade() << std::endl;
-	std::cout << ro.get_execute_grade() << std::endl;
 	hi.signForm(sh);
 	hi.executeForm(sh);
 	hi.signForm(ro);
 	hi.executeForm(ro);
 	hi.signForm(pr);
 	hi.executeForm(pr);
+
+	std::cout << pr << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "========================" << std::endl;
@@ -31,6 +31,8 @@ int main()
 	king.executeForm(ro);
 	king.signForm(pr);
 	king.executeForm(pr);
+
+	std::cout << pr << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "========================" << std::endl;
