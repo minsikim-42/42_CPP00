@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:15:52 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/12 17:09:10 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:40:49 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,24 @@ int find_form(std::string form)
 
 Form	*Intern::new_pre(std::string form)
 {
-	return (new PresidentialPardonForm);
+	return (new PresidentialPardonForm(form));
 }
 Form	*Intern::new_robo(std::string form)
 {
-	return (new RobotomyRequestForm);
+	return (new RobotomyRequestForm(form));
 }
 Form	*Intern::new_sh(std::string form)
 {
-	return (new ShrubberyCreationForm);
+	return (new ShrubberyCreationForm(form));
 }
 
 Form *Intern::makeForm(std::string form, std::string target)
 {
     typedef Form *(Intern::*f_ptr)(std::string target);
 	f_ptr	f_list[3] = {
-		&Intern::new_pre, 
 		&Intern::new_robo, 
-		&Intern::new_sh
+		&Intern::new_sh, 
+		&Intern::new_pre
 		};
 
     int i = find_form(form);

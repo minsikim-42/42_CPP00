@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 15:12:50 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/12 16:02:05 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:22:24 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ private:
 public:
 	Intern(/* args */);
 	Intern(const Intern &origin);
-	virtual ~Intern();
+	~Intern();
 	Intern	&operator=(const Intern &origin);
 
 	Form	*new_pre(std::string form);

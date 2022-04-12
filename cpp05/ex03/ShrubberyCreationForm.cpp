@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:22:06 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/12 17:10:04 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:19:38 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &origin)
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &)
 {
 	return *this;
 }

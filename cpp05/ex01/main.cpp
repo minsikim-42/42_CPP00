@@ -20,7 +20,8 @@ int main()
 	}
 	std::cout << "try catched wrong\n\n";
 	
-	Form f("f", 20, 70);
+	Form test("f", 20, 70);
+	Form f(test);
 	try
 	{
 		a.signForm(f);
@@ -35,4 +36,5 @@ int main()
 	std::cout << std::endl;
 	std::cout << a << std::endl;
 	std::cout << f << std::endl;
+	std::cout << test << std::endl;
 }

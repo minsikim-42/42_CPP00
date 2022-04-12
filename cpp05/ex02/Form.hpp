@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:13:07 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/10 13:42:17 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:27:53 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ private:
 public:
 	Form();
 	Form(const Form &origin);
-	~Form();
+	virtual ~Form();
 	Form	&operator=(const Form &origin);
 	Form(std::string name_, int s_grade, int e_grade);
 
