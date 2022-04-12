@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:57:51 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/11 14:57:31 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:48:39 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ Bureaucrat::Bureaucrat(std::string name_, int grade_) : name(name_), grade(grade
 	else if (this->grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 }
-	
-Bureaucrat::Bureaucrat(const Bureaucrat &origin)
+
+Bureaucrat::Bureaucrat(const Bureaucrat &origin) : name(origin.getName()), grade(origin.getGrade())
 {
 	*this = origin;
 }

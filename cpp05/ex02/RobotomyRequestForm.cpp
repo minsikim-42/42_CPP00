@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:22:06 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/11 14:02:05 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:09:37 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ RobotomyRequestForm::RobotomyRequestForm(/* args */) : Form("Default", 72, 45), 
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &sh)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &ro) : Form(ro.get_name(), 72, 45), target(ro.target)
 {
-	*this = sh;
+	*this = ro;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

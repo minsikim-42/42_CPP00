@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 15:36:25 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/11 14:46:38 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:40:57 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Form::Form() : name(""), is_signed(false), sign_grade(150), execute_grade(150)
 
 Form::Form(const Form &origin) : name(origin.get_name()), is_signed(false), sign_grade(origin.get_sign_grade()), execute_grade(origin.get_execute_grade())
 {
-
+	*this = origin;
 }
 
 Form::~Form()

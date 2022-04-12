@@ -2,7 +2,8 @@
 
 int main()
 {
-	Bureaucrat	bu;
+	Bureaucrat	bu("bu", 150);
+	Bureaucrat	test(bu);
 
 	try
 	{
@@ -41,4 +42,5 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << bu << std::endl;
+	std::cout << test << std::endl;
 }

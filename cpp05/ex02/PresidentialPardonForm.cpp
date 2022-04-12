@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 10:22:06 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/11 14:08:12 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/12 17:09:45 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm(/* args */) : Form("Default", 25,
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &sh)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &sh) : Form(sh.get_name(), 25, 5), target(sh.target)
 {
 	*this = sh;
 }
