@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 21:50:12 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/15 16:02:59 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/15 17:16:22 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	test(void)
 		}
 	}
 	const Cat deepcopy = *(Cat *)(Animal_array[1]);
-	Cat cat2;
-	cat2 = deepcopy;
 	const Dog deepcopy2 = *(Dog *)(Animal_array[2]);
+	Cat cat2 = deepcopy;
+	cat2 = deepcopy; // leaks.. why?? -> copycon, new->delete(oper=)->new(oper=)
 	for (int i = 0; i < 4; i++)
 	{
 		delete Animal_array[i];

@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:50:36 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/06 22:03:13 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/15 17:18:17 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Dog::Dog()
 Dog::Dog(const Dog &Dog)
 {
 	std::cout << "Copy Dog constructor called\n";
+	brain = new Brain();
 	*this = Dog;
 }
 

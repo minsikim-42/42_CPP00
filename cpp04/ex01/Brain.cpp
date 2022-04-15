@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:36:44 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/06 14:29:20 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/15 17:09:01 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Brain	&Brain::operator=(const Brain &Brain)
 	this->i = Brain.i;
 	for (int j = 0; j < i; j++)
 	{
-		this->ideas[i] = Brain.ideas[i];
+		this->ideas[j] = Brain.ideas[j];
 	}
 	return (*this);
 }

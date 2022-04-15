@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:25:32 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/15 16:06:22 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/15 17:15:25 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ void	Cat::show_my_ideas(void) const
 Cat	&Cat::operator=(const Cat &cat)
 {
 	this->type = cat.getType();
-	if (brain)
-		delete (brain);
+	delete brain;
 	this->brain = new Brain(*(cat.brain));
 	return (*this);
 }
