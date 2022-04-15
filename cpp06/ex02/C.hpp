@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialization.hpp                                  :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 21:28:10 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/15 01:32:55 by minsikkim        ###   ########.fr       */
+/*   Created: 2022/04/15 01:58:24 by minsikkim         #+#    #+#             */
+/*   Updated: 2022/04/15 01:58:40 by minsikkim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZATION_HPP
-# define SERIALIZATION_HPP
+
+#ifndef C_HPP
+# define C_HPP
 
 # include <iostream>
+# include "Base.hpp"
 
-struct Data
+class C : public Base
 {
-	int	data;
-	Data();
-	int	get_data(void);
 };
-
-uintptr_t serialize(Data* ptr);
-
-Data* deserialize(uintptr_t raw);
 
 #endif

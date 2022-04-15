@@ -3,29 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Serialization.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
+/*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:55:40 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/13 22:12:54 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/15 01:34:39 by minsikkim        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serialization.hpp"
 
-Data::Data(){}
-
-Data::Data(const Data &da) : data(42)
-{
-	*this = da;
-}
-
-Data::~Data(){}
-
-Data	&Data::operator=(const Data &da)
-{
-	this->data = da.data;
-	return *this;
-}
+Data::Data() : data(42)
+{}
 
 int	Data::get_data(void)
 {
