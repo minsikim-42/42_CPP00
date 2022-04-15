@@ -7,15 +7,23 @@ void	print_char(std::string agv)
 	std::cout << "char : ";
 	try
 	{
-		char c = std::stoi(agv);
-		if (std::isprint(c))
+		char *err;
+		char c = static_cast<char>(std::strtod(agv.c_str(), &err));
+		std::string e = err;
+		if (e.length() != 0 && e != "f")
+		{
+			std::cout << "Invalid input" << std::endl;
+		}
+		else if (isinf(std::stoi(agv)))
+			std::cout << "impossible" << std::endl;
+		else if (std::isprint(c))
 			std::cout << "'" << c << "'" << std::endl;
 		else
 			std::cout << "Non displayable\n";
 	}
 	catch (std::exception const &e)
 	{
-		std::cout << "impossible - "  << e.what() << std::endl;
+		std::cout << "impossible" << std::endl;
 	}
 }
 
@@ -24,21 +32,23 @@ void	print_int(std::string agv)
 	std::cout << "int : ";
 	try
 	{
-		int i = std::stoi(agv);
-		if (std::numeric_limits<int>::max() < i \
-			|| std::numeric_limits<int>::min() > i)
+		char *err;
+		int i = static_cast<int>(std::strtod(agv.c_str(), &err));
+		std::string e = err;
+		if (e.length() != 0 && e != "f")
 		{
-			std::cout << "impossible" << std::endl;
-			return ;
+			std::cout << "Invalid input" << std::endl;
 		}
-		if (std::isinf(i))
-			i = 42 / (float)0;
+		else if (isinf(std::stoi(agv)))
+			std::cout << "impossible" << std::endl;
+		else if (std::isinf(i))
+			i = 42 / static_cast<double>(0);
 		else
 			std::cout << i << std::endl;
 	}
 	catch (std::exception const &e)
 	{
-		std::cout << "impossible - "  << e.what() << std::endl;
+		std::cout << "impossible" << std::endl;
 	}
 }
 
@@ -47,8 +57,14 @@ void	print_float(std::string agv)
 	std::cout << "float : ";
 	try
 	{
-		float f = std::stof(agv);
-		if (std::isnan(f))
+		char *err;
+		float f = static_cast<float>(std::strtod(agv.c_str(), &err));
+		std::string e = err;
+		if (e.length() != 0 && e != "f")
+		{
+			std::cout << "Invalid input" << std::endl;
+		}
+		else if (std::isnan(f))
 		{
 			std::cout << "nanf" << std::endl;
 			return ;
@@ -58,7 +74,7 @@ void	print_float(std::string agv)
 	}
 	catch(std::exception const &e)
 	{
-		std::cout << "impossible - "  << e.what() << std::endl;
+		std::cout << "impossible" << std::endl;
 	}
 }
 
@@ -67,18 +83,23 @@ void	print_double(std::string agv)
 	std::cout << "double : ";
 	try
 	{
-		double d = std::stod(agv);
-		if (std::isnan(d))
+		char *err;
+		double d = static_cast<double>(std::strtod(agv.c_str(), &err));
+		std::string e = err;
+		if (e.length() != 0 && e != "f")
+		{
+			std::cout << "Invalid input" << std::endl;
+		}
+		else if (std::isnan(d))
 		{
 			std::cout << "nan" << std::endl;
-			return ;
 		}
 		else
 			std::cout << d << std::endl;
 	}
 	catch(std::exception const &e)
 	{
-		std::cout << "impossible - "  << e.what() << std::endl;
+		std::cout << "impossible" << std::endl;
 	}
 }
 

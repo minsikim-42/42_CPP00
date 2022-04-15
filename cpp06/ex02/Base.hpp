@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
+/*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 01:51:28 by minsikkim         #+#    #+#             */
-/*   Updated: 2022/04/15 01:57:10 by minsikkim        ###   ########.fr       */
+/*   Updated: 2022/04/15 20:18:03 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 
 struct Base
 {
-    virtual ~Base();
+private:
+
+public:
+    virtual ~Base(){};
 };
 
 #endif

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialization.hpp                                  :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: minsikkim <minsikkim@student.42.fr>        +#+  +:+       +#+        */
+/*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:28:10 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/15 01:32:55 by minsikkim        ###   ########.fr       */
+/*   Updated: 2022/04/15 15:45:10 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZATION_HPP
-# define SERIALIZATION_HPP
+#ifndef DATA_HPP
+# define DATA_HPP
 
 # include <iostream>
 
 struct Data
 {
-	int	data;
+	char	c[10000];
+	int		i;
+	int		j;
+	int		k;
+	int		l;
 	Data();
-	int	get_data(void);
+	char	*get_c(void);
+	int		get_i(void);
+	int		get_j(void);
+	int		get_k(void);
+	int		get_l(void);
 };
 
 uintptr_t serialize(Data* ptr);

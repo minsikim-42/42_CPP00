@@ -1,8 +1,7 @@
-NAME = serialization
+NAME = cast
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXXCC = c++
-FILE = main.cpp \
-		Data.cpp
+FILE = main.cpp
 
 OBJECT = $(FILE:.cpp=.o)
 
