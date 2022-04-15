@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 12:50:36 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/06 17:49:42 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:19:09 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	Dog::show_my_ideas(void) const
 Dog	&Dog::operator=(const Dog &dog)
 {
 	this->type = dog.getType();
+	if (brain)
+		delete (brain);
 	this->brain = new Brain(*(dog.brain));
 	return (*this);
 }
