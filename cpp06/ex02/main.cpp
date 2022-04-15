@@ -46,7 +46,7 @@ void	identify(const Base& p)
 		std::cout << "C" << std::endl;
 }
 
-int main()
+void	test(void)
 {
 	const Base	*ba = generate();
 	Base		*ba2 = generate();
@@ -55,4 +55,14 @@ int main()
 	identify(*ba);
 	identify(ba2);
 	identify(*ba2);
+
+	delete ba;
+	delete ba2;
+}
+
+int main()
+{
+	test();
+
+	system("leaks cast");
 }
