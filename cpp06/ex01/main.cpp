@@ -22,5 +22,7 @@ int main()
 	std::cout << test3->get_c() << std::endl;
 	std::cout << test3->get_l() << std::endl;
 
+	std::cout << sizeof(Data) << std::endl;
+
 	return (0);
 }

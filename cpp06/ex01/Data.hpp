@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 21:28:10 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/15 15:45:10 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/17 10:45:29 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 
 # include <iostream>
 
+# define CH 4
+
 struct Data
 {
-	char	c[10000];
+	char	c[CH];
 	int		i;
 	int		j;
 	int		k;
 	int		l;
 	Data();
+	
 	char	*get_c(void);
+	
 	int		get_i(void);
 	int		get_j(void);
 	int		get_k(void);
