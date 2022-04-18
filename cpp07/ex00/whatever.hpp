@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Whatever.hpp                                       :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:13:57 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/17 21:30:49 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/18 20:45:43 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	swap(T &a, T &b)
 }
 
 template<typename T>
-T		min(const T &a, const T &b)
+const T		&min(const T &a, const T &b)
 {
 	if (b > a)
 		return a;
@@ -31,7 +31,25 @@ T		min(const T &a, const T &b)
 }
 
 template<typename T>
-T		max(const T &a, const T &b)
+T		&min(T &a, T &b)
+{
+	if (b > a)
+		return a;
+	else
+		return b;
+}
+
+template<typename T>
+const T		&max(const T &a, const T &b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+template<typename T>
+T		&max(T &a, T &b)
 {
 	if (a > b)
 		return a;

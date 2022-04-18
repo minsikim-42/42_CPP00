@@ -17,5 +17,9 @@ int main( void ) {
 
 	std::cout << "min( 3.33, 3.33 ) = " << ::min( 3.33, 3.33 ) << std::endl;
 	std::cout << "max( 3.33, 3.33 ) = " << ::max( 3.33, 3.33 ) << std::endl;
+
+	a = 2;
+	const int &e = min(a,b);
+	std::cout << &e << " vs " << &b << std::endl;
 	return 0;
 }
