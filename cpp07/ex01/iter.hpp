@@ -6,7 +6,7 @@
 /*   By: minsikim <minsikim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 21:29:20 by minsikim          #+#    #+#             */
-/*   Updated: 2022/04/17 22:09:27 by minsikim         ###   ########.fr       */
+/*   Updated: 2022/04/18 10:25:46 by minsikim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 template<typename T>
 void	iter(T *arr, const int length, void (*fn)(const T &ele))
 {
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < length; i++) // arr[i]
 	{
 		fn(arr[i]);
 	}

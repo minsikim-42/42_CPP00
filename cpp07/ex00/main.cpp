@@ -1,4 +1,4 @@
-#include "Whatever.hpp"
+#include "whatever.hpp"
 #include <iostream>
 
 int main( void ) {
@@ -14,5 +14,8 @@ int main( void ) {
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	std::cout << "min( 3.33, 3.33 ) = " << ::min( 3.33, 3.33 ) << std::endl;
+	std::cout << "max( 3.33, 3.33 ) = " << ::max( 3.33, 3.33 ) << std::endl;
 	return 0;
 }
